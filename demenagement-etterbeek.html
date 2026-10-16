@@ -135,6 +135,22 @@ summary::-webkit-details-marker { display: none; }
 }
 
 
+nav[aria-label="Navigation principale"] a { transition: border-color .16s ease-out; }
+header a[href^="tel:"] > span:first-child { transition: background-color .16s ease-out, color .16s ease-out; }
+header a[href^="tel:"] .nv-tel-numero { text-decoration: underline 3px transparent; text-underline-offset: 8px; transition: text-decoration-color .16s ease-out; }
+@media (hover: hover) and (pointer: fine) {
+  nav[aria-label="Navigation principale"] a:hover { border-bottom-color: var(--jaune) !important; }
+  header a[href^="tel:"]:hover > span:first-child { background: var(--violet) !important; color: var(--jaune); }
+  header a[href^="tel:"]:hover .nv-tel-numero { text-decoration-color: var(--jaune); }
+}
+nav[aria-label="Navigation principale"] a:focus-visible { border-bottom-color: var(--jaune) !important; }
+header a[href^="tel:"]:focus-visible > span:first-child { background: var(--violet) !important; color: var(--jaune); }
+header a[href^="tel:"]:focus-visible .nv-tel-numero { text-decoration-color: var(--jaune); }
+@media (prefers-reduced-motion: reduce) {
+  nav[aria-label="Navigation principale"] a, header a[href^="tel:"] > span:first-child, header a[href^="tel:"] .nv-tel-numero { transition: none; }
+}
+
+
 .nv-menu-bouton { display: none; }
 @media (max-width: 959.98px) {
   .nv-desk { display: none !important; }               
