@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Confidentialité | DéménaGo</title>
+<meta name="description" content="Ce que DéménaGo fait des informations de votre demande de devis, combien de temps, et vos droits. Aucun cookie.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="32x32" href="assets-reduits/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets-reduits/favicon-180.png">
+<style>
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url('fonts/archivo-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+  src: url('fonts/archivo-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  --jaune: #fce80f;   
+  --violet: #01418a;
+  --blanc: #ffffff;
+  --blanc-casse: #fffef5;    
+  --creme: #fffbe6;          
+  --gris-texte: #595959;     
+  --gris-ligne: #d6d6d6;     
+  --gris-trait: #8c8c8c;     
+  --gris-hachure: #f0f0f0;   
+  --gris-exemple: #6b6b6b;   
+  --ombre: rgba(1, 65, 138, 0.28);
+
+  
+  --fond-page: var(--blanc);
+  --fond-calme: var(--creme);
+  --texte: var(--violet);
+  --texte-doux: var(--gris-texte);
+  --accent: var(--jaune);
+  --action: var(--violet);
+  --texte-sur-action: var(--blanc);
+  --filet: var(--gris-ligne);
+  --contour-champ: var(--gris-trait);
+}
+
+
+:root {
+  --police: 'Archivo', sans-serif;
+  --etirement-titres: 118%;
+  --etirement-nom: 112%;
+  --etirement-chiffre: 125%;
+
+  --taille-corps: 17px;
+  --interligne-corps: 1.55;
+  --h1: clamp(2.25rem, 1.1rem + 3.6vw, 3.7rem);
+  --h2: clamp(2rem, 1.2rem + 2.6vw, 3.4rem);
+  --h3-service: clamp(1.8rem, 1.2rem + 1.6vw, 2.5rem);
+  --h3-etape: 1.55rem;
+  --h3-formulaire: 1.6rem;
+  --chiffre: clamp(2.6rem, 1.4rem + 4vw, 4.6rem);
+  --montant: clamp(1.8rem, 1.4rem + 1.2vw, 2.4rem);
+  --sous-titre: clamp(19px, 1.6vw, 23px);
+  --chapeau: clamp(18px, 1.4vw, 20px);
+  --surtitre: 13px;
+
+  --graisse-titre: 800;
+  --graisse-fort: 700;
+  --graisse-moyen: 600;
+  --interligne-titre: 1.04;
+  --approche-titre: -0.015em;
+  --approche-majuscules: 0.08em;
+}
+
+:root {
+  --rayon: 28px;                          
+  --rayon-petit: calc(var(--rayon) / 2);  
+  --rayon-champ: 12px;
+  --rayon-etiquette: 10px;
+  --rayon-pilule: 999px;
+
+  --section-y: clamp(56px, 7vw, 104px);
+  --gouttiere: clamp(12px, 1.6vw, 20px);
+  --interieur: clamp(20px, 5vw, 72px);
+  --largeur-max: 1200px;
+  --barre-mobile: 76px;
+  --logo-h: 60px;
+
+  --hauteur-bouton: 56px;
+  --hauteur-bouton-grand: 60px;
+  --hauteur-champ: 52px;
+  --cible-min: 44px;
+}
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --duree-press: 160ms;
+  --duree-couleur: 200ms;
+
+  --ombre-formulaire: 0 30px 60px -30px var(--ombre);
+  --ombre-barre: 0 -10px 30px -12px var(--ombre);
+  --decalage-photo: -14px 14px 0 var(--jaune);       
+  --decalage-photo-mobile: -8px 8px 0 var(--jaune);
+  --hachures: repeating-linear-gradient(135deg, var(--gris-hachure) 0 12px, var(--blanc) 12px 24px);
+}
+
+
+
+body { margin: 0; background: #fff; }
+html { scroll-behavior: smooth; }
+a { color: inherit; }
+a:hover { color: inherit; }
+summary::-webkit-details-marker { display: none; }
+
+
+[hidden] { display: none !important; }
+
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+
+@media (hover: hover) and (pointer: fine) {
+  .scp0:hover { background: var(--jaune) !important; color: var(--violet) !important; }
+  .scp1:hover { background: var(--violet) !important; color: var(--jaune) !important; }   
+  .scp2:hover { border-color: var(--violet) !important; background: var(--creme) !important; }
+}
+
+
+nav[aria-label="Navigation principale"] a { transition: border-color .16s ease-out; }
+header a[href^="tel:"] > span:first-child { transition: background-color .16s ease-out, color .16s ease-out; }
+header a[href^="tel:"] .nv-tel-numero { text-decoration: underline 3px transparent; text-underline-offset: 8px; transition: text-decoration-color .16s ease-out; }
+@media (hover: hover) and (pointer: fine) {
+  nav[aria-label="Navigation principale"] a:hover { border-bottom-color: var(--jaune) !important; }
+  header a[href^="tel:"]:hover > span:first-child { background: var(--violet) !important; color: var(--jaune); }
+  header a[href^="tel:"]:hover .nv-tel-numero { text-decoration-color: var(--jaune); }
+}
+nav[aria-label="Navigation principale"] a:focus-visible { border-bottom-color: var(--jaune) !important; }
+header a[href^="tel:"]:focus-visible > span:first-child { background: var(--violet) !important; color: var(--jaune); }
+header a[href^="tel:"]:focus-visible .nv-tel-numero { text-decoration-color: var(--jaune); }
+@media (prefers-reduced-motion: reduce) {
+  nav[aria-label="Navigation principale"] a, header a[href^="tel:"] > span:first-child, header a[href^="tel:"] .nv-tel-numero { transition: none; }
+}
+
+
+.nv-menu-bouton { display: none; }
+@media (max-width: 959.98px) {
+  .nv-desk { display: none !important; }               
+  .nv-menu-bouton { display: inline-block; }
+  .nv-pied { padding-bottom: 120px !important; }       
+  .nv-pas-nom { display: none; }                        
+  .nv-plan-sous { margin-left: 0 !important; }          
+}
+@media (min-width: 960px) { .nv-menu { display: none !important; } }
+
+
+.nv-barre { display: none; }
+@media (max-width: 959.98px) {
+  .nv-barre { display: grid; }
+  html.barre-auto .nv-barre { transition: transform 260ms cubic-bezier(.2, .8, .2, 1), visibility 0s linear 0s; }
+  
+  html.barre-auto .nv-barre:not(.visible) { transform: translateY(calc(100% + 12px)); visibility: hidden; transition: transform 260ms cubic-bezier(.2, .8, .2, 1), visibility 0s linear 260ms; }
+}
+@media (prefers-reduced-motion: reduce) { html.barre-auto .nv-barre, html.barre-auto .nv-barre:not(.visible) { transition: none; } }
+html.pleine-page body { position: relative; }
+html.pleine-page .nv-barre { position: absolute; }
+
+
+.nv-lift { display: none; }
+html.lift-css .nv-lift, html.lift-js .nv-lift {
+  --l-nacelle: 40px;
+  --h-nacelle: calc(var(--l-nacelle) * 26 / 32);
+  --e-sol: 3px;
+  display: block; position: fixed; z-index: 25; pointer-events: none;
+  right: 3px; top: 132px; bottom: 20px; width: var(--l-nacelle);
+}
+html.pleine-page .nv-lift { display: none; }
+@media (max-width: 960px) { html.lift-css .nv-lift, html.lift-js .nv-lift { display: none !important; } }
+@media (prefers-reduced-motion: reduce) { html.lift-css .nv-lift, html.lift-js .nv-lift { display: none !important; } }
+.nv-lift .a { fill: var(--violet); }
+.nv-lift .j { fill: var(--jaune); }
+.nv-lift .t { stroke: var(--violet); stroke-width: 1.6; }
+.nv-lift__plateau .a { stroke: var(--jaune); stroke-width: 0.5px; vector-effect: non-scaling-stroke; }
+.nv-lift__bras {
+  position: absolute; top: 0; right: 0; bottom: var(--e-sol); width: 12px;
+  background:
+    linear-gradient(var(--violet), var(--violet)) left top / 2.5px 100% no-repeat,
+    linear-gradient(var(--violet), var(--violet)) right top / 2.5px 100% no-repeat,
+    repeating-linear-gradient(to bottom, transparent 0 12px, var(--violet) 12px 14px);
+}
+.nv-lift__sol { position: absolute; left: 0; right: 0; bottom: 0; height: var(--e-sol); border-radius: 2px; background: var(--violet); }
+.nv-lift__chariot { position: absolute; left: 0; right: 0; top: var(--h-nacelle); bottom: var(--e-sol); transform: translateY(-100%); will-change: transform; }
+.nv-lift__nacelle { position: absolute; right: 0; bottom: 0; width: var(--l-nacelle); height: var(--h-nacelle); }
+.nv-lift__plateau, .nv-lift__charge { position: absolute; display: block; overflow: visible; }
+.nv-lift__plateau { left: 0; top: 0; width: 100%; height: 100%; transition: transform 200ms var(--ease-out); }
+.nv-lift__charge { left: 9.375%; bottom: 15.385%; width: 56.25%; height: 61.54%; transition: transform 200ms var(--ease-out); }
+
+html.lift-css .nv-lift__chariot {
+  animation: nv-lift-descente linear both;
+  animation-timeline: scroll(root block);
+  animation-range: 0px var(--arrivee, 100%);
+}
+@keyframes nv-lift-descente { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+
+html.lift-pose .nv-lift__charge { transform: translateY(25%); transition: transform 220ms var(--ease-out); }
+html.lift-pose .nv-lift__plateau { transform: translateY(-80%); transition: transform 450ms var(--ease-out) 60ms; }
+
+
+
+
+:focus-visible { outline: 3px solid var(--violet); outline-offset: 3px; }
+[tabindex="-1"]:focus { outline: none; }
+
+html { scroll-padding-top: 132px; }   
+@media (max-width: 959.98px) { html { scroll-padding-bottom: 96px; } }
+
+
+.nv-evitement { position: absolute; left: 12px; top: -140px; z-index: 60; padding: 12px 22px; border-radius: 999px; background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 16px; text-decoration: none; }
+.nv-evitement:focus { top: 12px; }
+.nv-evitement:focus-visible { outline-color: var(--jaune); outline-offset: 2px; box-shadow: 0 0 0 5px var(--violet); }
+
+
+a.scp0, a.scp1, button, .nv-barre a { transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease, border-color 200ms ease; }
+a.scp2 { transition: background-color 200ms ease, border-color 200ms ease; }
+a.scp0:active, a.scp1:active, button:active, .nv-barre a:active { transform: scale(0.97); }
+[data-devis-svc]:active { transform: scale(0.98); }
+@media (prefers-reduced-motion: reduce) {
+  a.scp0, a.scp1, a.scp2, button, .nv-barre a { transition: none; }
+  a.scp0:active, a.scp1:active, button:active, .nv-barre a:active, [data-devis-svc]:active { transform: none; }
+}
+
+.nv-lien svg { transition: transform 200ms var(--ease-out); }
+@media (hover: hover) and (pointer: fine) { .nv-lien:hover svg { transform: translateX(4px); } }
+@media (prefers-reduced-motion: reduce) { .nv-lien svg { transition: none; } .nv-lien:hover svg { transform: none; } }
+.scp0 > svg:last-child { transition: transform 200ms var(--ease-out); }   
+@media (hover: hover) and (pointer: fine) { .scp0:hover > svg:last-child { transform: translateX(4px); } }
+@media (prefers-reduced-motion: reduce) { .scp0 > svg:last-child { transition: none; } .scp0:hover > svg:last-child { transform: none; } }
+
+
+.nv-faq-plus { transition: transform 200ms var(--ease-out); }
+details[open] > summary .nv-faq-plus { transform: rotate(45deg); }
+@media (prefers-reduced-motion: reduce) { .nv-faq-plus { transition: none; } }
+
+
+@keyframes nv-entree { from { opacity: 0; transform: translateY(8px); } }
+@keyframes nv-fondu { from { opacity: 0; } }
+html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidden]) { animation: nv-entree 220ms var(--ease-out) both; }
+@media (prefers-reduced-motion: reduce) {
+  html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidden]) { animation-name: nv-fondu; }
+  [data-barre] { transition: none !important; }
+}
+
+
+.nv-pied ul { gap: 0 !important; }
+.nv-pied ul li:not(:has(a)) { padding: 5px 0; }
+.nv-pied-lien { display: inline-flex; align-items: center; min-height: 32px; }
+.nv-pied-bas-lien { display: inline-flex; align-items: center; min-height: 44px; }
+.nv-fil { align-items: center !important; }
+.nv-fil > span { align-items: center !important; }
+.nv-fil-lien { display: inline-flex; align-items: center; min-height: 24px; }
+@media (max-width: 959.98px) {
+  .nv-pied-lien, .nv-fil-lien { min-height: 44px; }
+  .nv-fil { padding-top: 9px !important; }          
+  .nv-plan-lien { display: inline-flex; align-items: center; min-height: 44px; }
+  .nv-pied.nv-sans-barre { padding-bottom: 40px !important; }   
+}
+
+
+.nv-sub { display: grid !important; grid-template-rows: subgrid; }
+.nv-sub6 { grid-row: span 6; row-gap: 18px; }
+.nv-sub3 { grid-row: span 3; row-gap: 0; }
+.nv-sub6 > a { justify-self: start; }
+
+
+@media (max-width: 600px) {
+  .nv-communes { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 8px !important; }
+  .nv-communes a { flex-direction: column; align-items: flex-start !important; justify-content: center !important; gap: 2px !important; padding: 10px 12px !important; font-size: 16px; }
+}
+
+
+@media (min-width: 960px) and (max-width: 1099.98px) {
+  .nv-tel-numero { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+
+
+
+
+.nv-est { grid-template-areas: "tete" "reglages" "resultat"; row-gap: 32px !important; }
+.nv-est-tete { grid-area: tete; }
+.nv-est-reglages { grid-area: reglages; }
+.nv-est-resultat { grid-area: resultat; }
+@media (min-width: 960px) {
+  .nv-est { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; grid-template-areas: "tete reglages" "resultat reglages"; column-gap: 56px; align-content: start; }
+}
+
+
+.nv-formules { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 32px var(--gouttiere); margin-top: 40px; align-items: stretch; }
+.nv-formule { position: relative; display: flex; flex-direction: column; gap: 14px; border: 2px solid var(--gris-ligne); border-radius: var(--rayon); padding: clamp(24px, 3vw, 36px); background: #fff; }
+.nv-formule--phare { border-color: var(--violet); box-shadow: 0 0 0 1px var(--violet), var(--ombre-formulaire); }   
+.nv-formule__phare { position: absolute; top: -15px; left: clamp(24px, 3vw, 36px); padding: 4px 12px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-size: 14px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.nv-formule h3 { margin: 0; font-weight: 800; font-stretch: 118%; font-size: 1.7rem; line-height: 1.05; }
+.nv-formule__prix { margin: 0; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; }
+.nv-formule__prix b { font-weight: 900; font-stretch: 125%; font-size: clamp(2.6rem, 1.8rem + 2vw, 3.4rem); line-height: 1; letter-spacing: -0.03em; }
+.nv-formule__prix span { font-size: 18px; font-weight: 700; }
+.nv-formule ul { list-style: none; margin: 0; padding: 14px 0 0; border-top: 1.5px solid var(--gris-ligne); display: grid; gap: 10px; font-size: 17px; font-weight: 600; }
+.nv-formule li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+.nv-formule li > span:first-child { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune); }
+.nv-formule__sup { margin: 0; font-size: 16px; color: var(--gris-texte); }
+.nv-formule__sup b { color: var(--violet); }
+.nv-formule > a { margin-top: auto; }
+.nv-formules-communs { margin: 28px 0 0; padding: 20px 24px; border-radius: 20px; background: var(--creme); font-size: 17px; }
+.nv-formules-communs b { display: block; margin-bottom: 4px; }
+
+
+.nv-image-a-venir { position: relative; margin: 0; min-height: clamp(220px, 28vw, 360px); border-radius: 14px; border: 2px dashed var(--gris-trait); background: var(--hachures); display: grid; place-items: center; padding: 20px; box-sizing: border-box; }
+.nv-image-a-venir figcaption { max-width: 34ch; text-align: center; font-size: 15px; font-weight: 700; background: #fff; border-radius: 12px; padding: 10px 14px; }
+
+
+.nv-heure { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--gouttiere); margin-top: 40px; }
+.nv-heure article { display: flex; flex-direction: column; gap: 12px; border: 2px solid var(--gris-ligne); border-radius: var(--rayon); padding: clamp(24px, 3vw, 36px); }
+.nv-heure h3 { margin: 0; font-weight: 800; font-stretch: 118%; font-size: 1.55rem; line-height: 1.05; }
+.nv-heure p { margin: 0; }
+.nv-heure .nv-heure__prix { font-size: 18px; font-weight: 600; }
+.nv-heure .nv-heure__prix b { font-weight: 800; font-stretch: 118%; font-size: var(--montant); line-height: 1.1; }
+.nv-heure .nv-heure__note { font-size: 16px; color: var(--gris-texte); }
+.nv-heure article > a { margin-top: auto; }
+
+
+.nv-prix-mobile { display: none; }
+@media (max-width: 959.98px) { .nv-prix-mobile { display: flex; } }
+
+
+.nv-conseils { margin: 22px 0 0; padding: 18px 20px; border-radius: 16px; background: var(--creme); border: 1.5px solid var(--gris-ligne); }
+.nv-conseils p { margin: 0 0 8px; font-weight: 800; }
+.nv-conseils ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: 16px; }
+.nv-conseils li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+.nv-conseils li > span:first-child { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune); font-weight: 800; font-size: 14px; }
+.nv-legal { max-width: 760px; }
+.nv-legal h2 { font-weight: 800; font-stretch: 118%; font-size: 1.45rem; line-height: 1.15; margin: 40px 0 12px; }
+.nv-legal p, .nv-legal li { color: var(--gris-texte); text-wrap: pretty; }
+.nv-legal p { margin: 0 0 12px; }
+.nv-legal ul { margin: 0 0 12px; padding-left: 22px; }
+.nv-legal strong, .nv-legal a { color: var(--violet); }
+.nv-legal dl { margin: 0 0 12px; display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; }
+.nv-legal dt { font-weight: 700; }
+.nv-legal dd { margin: 0; color: var(--gris-texte); }
+@media (max-width: 600px) { .nv-legal dl { grid-template-columns: 1fr; gap: 2px; } .nv-legal dd { margin-bottom: 10px; } }
+</style>
+</head>
+<body>
+<script>
+  
+  (function (r) {
+    if (/[?&]pleine-page/.test(location.search)) r.classList.add('pleine-page');
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var css = !/[?&]repli\b/.test(location.search) && !!(window.CSS && CSS.supports && CSS.supports('animation-timeline: scroll()'));
+    r.classList.add(css ? 'lift-css' : 'lift-js');
+  })(document.documentElement);
+</script>
+<div style="font-family: var(--police); font-size: 17px; line-height: 1.55; color: var(--violet); background: rgb(255, 255, 255); -webkit-font-smoothing: antialiased; min-height: 100vh;"><a class="nv-evitement" href="#contenu">Aller au contenu</a><header style="position: sticky; top: 0px; z-index: 30; background: #fff; border-bottom: 1px solid var(--gris-ligne);">
+  <div style="display: flex; align-items: center; gap: 24px; min-height: 72px; padding: 8px var(--interieur); max-width: 1344px; margin: 0px auto;">
+    <a href="index.html" aria-label="DéménaGo, accueil" style="display: flex; align-items: center; gap: 12px; text-decoration: none; margin-right: auto;">
+      <img src="assets-reduits/logo-demenago-entete.png" alt="" style="height: 84px; width: auto; display: block;" data-logo="entete">
+    </a>
+    
+      <nav aria-label="Navigation principale" style="display: flex; gap: 26px;" class="nv-desk">
+        
+          <a href="demenagement.html" style="text-decoration: none; font-weight: 600; font-size: 16px; padding: 10px 0px; white-space: nowrap; border-bottom: 3px solid transparent;">Déménagement</a>
+        
+          <a href="location-lift.html" style="text-decoration: none; font-weight: 600; font-size: 16px; padding: 10px 0px; white-space: nowrap; border-bottom: 3px solid transparent;">Location de lift</a>
+        
+          <a href="tarifs.html" style="text-decoration: none; font-weight: 600; font-size: 16px; padding: 10px 0px; white-space: nowrap; border-bottom: 3px solid transparent;">Tarifs</a>
+        
+          <a href="zone.html" style="text-decoration: none; font-weight: 600; font-size: 16px; padding: 10px 0px; white-space: nowrap; border-bottom: 3px solid transparent;">Zone</a>
+        
+      </nav>
+      <a href="tel:+32485152702" style="display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 16px; white-space: nowrap;" class="nv-desk">
+        <span style="width: 44px; height: 44px; border-radius: 999px; border: 2px solid var(--violet); background: var(--jaune); display: grid; place-items: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span><span class="nv-tel-numero">0485 15 27 02</span></a>
+      <a href="devis.html" class="scp0 nv-desk" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0px 22px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap;">Demander un devis <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+
+  <button type="button" class="nv-menu-bouton" aria-expanded="false" aria-controls="nv-menu" style="font: inherit; font-weight: 700; font-size: 15px; color: var(--violet); background: #fff; border: 1.5px solid var(--gris-trait); border-radius: 999px; min-height: 44px; padding: 0 18px; cursor: pointer;">Menu</button></div>
+  <nav id="nv-menu" class="nv-menu" aria-label="Menu" hidden="" style="display: grid; padding: 8px var(--interieur) 20px; border-top: 1px solid var(--gris-ligne);"><a href="demenagement.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Déménagement</a><a href="location-lift.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Location de lift</a><a href="tarifs.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Tarifs</a><a href="zone.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Zone</a><a href="international.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">International</a></nav></header><main id="contenu" tabindex="-1">
+  
+    <nav aria-label="Fil d'Ariane" style="max-width: 1200px; margin: 0px auto; padding: 20px var(--interieur) 0; font-size: 14px; font-weight: 600; color: var(--gris-texte); display: flex; flex-wrap: wrap; gap: 8px;" class="nv-fil">
+      
+        <span style="display: flex; gap: 8px;"><a href="index.html" style="color: var(--violet);" class="nv-fil-lien">Accueil</a><span aria-hidden="true">›</span></span>
+      
+      <span aria-current="page">Confidentialité</span>
+    </nav>
+
+    <section style="padding: clamp(28px,4vw,56px) var(--interieur) var(--section-y);"><div style="max-width: 1200px; margin: 0px auto;">
+      <h1 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: var(--h2);">Confidentialité</h1>
+      <div class="nv-legal" style="margin-top: 24px;">
+      <p>Cette page dit ce que DéménaGo fait des informations que vous lui donnez en demandant un devis. L'entreprise qui exploite DéménaGo est présentée dans les <a href="mentions-legales.html" style="color: var(--violet); font-weight: 700;">mentions légales</a>.</p>
+      <h2>Ce que nous recevons</h2>
+      <p>Les informations du formulaire de devis : votre prénom, votre téléphone, votre adresse mail, les communes de départ et d'arrivée, les étages et les ascenseurs, la date souhaitée, le volume et votre message ; et, si vous nous les donnez, votre nom et vos adresses.</p>
+      <h2>Pourquoi</h2>
+      <p>Uniquement pour répondre à votre demande : vous rappeler, établir le devis et, si vous l'acceptez, organiser votre déménagement. Vos informations ne sont ni vendues ni transmises à d'autres entreprises.</p>
+      <h2>Où elles arrivent</h2>
+      <p>Votre demande nous est envoyée par mail, sur <a href="mailto:contact@demenago.be" style="color: var(--violet); font-weight: 700;">contact@demenago.be</a>.</p>
+      <h2>Combien de temps</h2>
+      <p>Une demande qui n'aboutit pas est gardée <strong>12 mois</strong>, puis effacée. Si elle aboutit, ce qui sert à la facture est gardé le temps que la loi impose.</p>
+      <h2>Vos droits</h2>
+      <p>Vous pouvez à tout moment demander à voir vos informations, à les corriger ou à les effacer : écrivez-nous à <a href="mailto:contact@demenago.be" style="color: var(--violet); font-weight: 700;">contact@demenago.be</a> ou appelez le <a href="tel:+32485152702" style="color: var(--violet); font-weight: 700;">0485 15 27 02</a>.</p>
+      <p>Si vous estimez que vos données ne sont pas respectées, vous pouvez porter plainte auprès de l'<strong>Autorité de protection des données</strong> (autoriteprotectiondonnees.be).</p>
+      <h2>Cookies et mesure d'audience</h2>
+      <p>Ce site n'utilise <strong>aucun cookie</strong> ni aucun outil de mesure d'audience : rien ne vous suit d'une visite à l'autre, et aucun bandeau ne vous est donc demandé. Si cela change, cette page sera mise à jour et votre accord sera demandé avant.</p>
+      <p>Seule exception, qui ne nous est jamais envoyée : pour retenir votre estimation d'une page à l'autre, votre navigateur garde ce réglage le temps de la visite (stockage de session). Il s'efface quand vous fermez l'onglet.</p>
+      </div>
+    </div></section>
+
+    <section id="appel-final" style="padding: 0 var(--gouttiere);"><div style="position: relative; border: 2px solid var(--violet); border-radius: 28px; padding: clamp(32px,5vw,64px) var(--interieur); display: flex; flex-wrap: wrap; gap: 28px; align-items: center; justify-content: space-between; max-width: 1344px; margin: 0px auto; box-sizing: border-box;">
+      <span style="position: absolute; top: -2px; left: clamp(24px, 3vw, 40px); width: 72px; height: 8px; background: var(--jaune); border-radius: 0px 0px 8px 8px;"></span>
+      <div><h2 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem); text-wrap: balance;">Votre déménagement commence ici</h2><p style="margin: 10px 0px 0px; color: var(--gris-texte); font-size: 18px;">Devis par mail ou par téléphone. Particuliers et professionnels.</p></div>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="devis.html" class="scp0" style="display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0px 28px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 18px; text-decoration: none;">Demander un devis <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+        <a href="tel:+32485152702" class="scp1" style="display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0px 28px; border-radius: 999px; border: 2px solid var(--violet); background: var(--jaune); color: var(--violet); font-weight: 700; font-size: 18px; text-decoration: none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> 0485 15 27 02</a>
+      </div>
+    </div></section>
+  </main><footer style="background: #fff; border-top: 6px solid var(--jaune); margin-top: var(--section-y); padding: 56px var(--interieur) 40px;" class="nv-pied nv-sans-barre">
+  <div style="max-width: 1200px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+    <div>
+      <a href="index.html" style="display: flex; align-items: center; gap: 14px; text-decoration: none;" aria-label="DéménaGo, accueil"><img src="assets-reduits/logo-demenago-pied.png" alt="" style="height: 150px; width: auto; display: block;" data-logo="pied"></a>
+      <p style="margin: 18px 0px 0px; color: var(--gris-texte); font-size: 16px; max-width: 30ch;">Déménagement et location de lift à Bruxelles et en dehors.</p>
+    </div>
+    <div>
+      <h2 style="display: inline-block; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0px 0px 16px; padding-bottom: 6px; border-bottom: 3px solid var(--jaune);">Services</h2>
+      <ul style="list-style: none; margin: 0px; padding: 0px; display: grid; gap: 10px; font-size: 16px;">
+        <li><a href="demenagement.html" class="nv-pied-lien">Déménagement</a></li><li><a href="location-lift.html" class="nv-pied-lien">Location de lift</a></li><li><a href="international.html" class="nv-pied-lien">Déménagement international</a></li><li><a href="tarifs.html" class="nv-pied-lien">Tarifs</a></li><li><a href="devis.html" class="nv-pied-lien">Demander un devis</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 style="display: inline-block; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0px 0px 16px; padding-bottom: 6px; border-bottom: 3px solid var(--jaune);">Communes</h2>
+      <ul style="list-style: none; margin: 0px; padding: 0px; display: grid; gap: 10px; font-size: 16px;">
+        <li><a href="demenagement-anderlecht.html" class="nv-pied-lien">Anderlecht</a></li><li><a href="demenagement-bruxelles-ville.html" class="nv-pied-lien">Bruxelles-Ville</a></li><li><a href="demenagement-ixelles.html" class="nv-pied-lien">Ixelles</a></li><li><a href="demenagement-schaerbeek.html" class="nv-pied-lien">Schaerbeek</a></li><li><a href="demenagement-uccle.html" class="nv-pied-lien">Uccle</a></li>
+        <li><a href="zone.html" style="font-weight: 700;" class="nv-pied-lien">Les 19 communes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2 style="display: inline-block; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0px 0px 16px; padding-bottom: 6px; border-bottom: 3px solid var(--jaune);">Contact</h2>
+      <ul style="list-style: none; margin: 0px; padding: 0px; display: grid; gap: 10px; font-size: 16px;">
+        <li><a href="tel:+32485152702" style="font-weight: 700;" class="nv-pied-lien">0485 15 27 02</a></li>
+        <li><a href="mailto:contact@demenago.be" class="nv-pied-lien">contact@demenago.be</a></li>
+        <li>Horaires : de 6 h à 22 h</li>
+        <li style="color: var(--gris-texte); font-size: 14px;">TVA BE 0798.222.995</li>
+      </ul>
+    </div>
+  </div>
+  <div style="max-width: 1200px; margin: 48px auto 0px; padding-top: 24px; border-top: 1px solid var(--gris-ligne); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; font-size: 14px; color: var(--gris-texte);">
+    <span>© 2026 DéménaGo</span>
+    <nav aria-label="Informations" style="display: flex; gap: 20px; flex-wrap: wrap;"><a href="plan-du-site.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Plan du site</a><a href="mentions-legales.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Mentions légales</a><a href="confidentialite.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Confidentialité</a><a href="conditions-generales.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Conditions générales</a></nav>
+  </div></footer></div>
+<script>
+
+(function () {
+  'use strict';
+  const racine = document.documentElement;
+  const $ = (s, r) => (r || document).querySelector(s);
+  const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+
+  
+  const CLE = 'nv-demenageur-v1';
+  let mem = { est: { service: 'both', heures: 3, etage: 4 }, service: '' };   
+  try { const m = JSON.parse(sessionStorage.getItem(CLE) || 'null'); if (m && m.est) mem = m; } catch (e) {  }
+  const sauver = () => { try { sessionStorage.setItem(CLE, JSON.stringify(mem)); } catch (e) {  } };
+
+  
+  try {
+    const q = new URLSearchParams(location.search), est = q.get('est');
+    if (est) {
+      const [sv, h, e] = est.split(',');
+      if (['dem', 'lift', 'tractable', 'both', 'inter'].includes(sv)) {
+        mem.est = { service: sv, heures: Math.min(12, Math.max(1, parseInt(h, 10) || 3)), etage: (parseInt(e, 10) || 4) > 4 ? 24 : 4 };
+        if (q.has('choix')) mem.service = sv;
+        sauver();
+      }
+    }
+  } catch (e) {  }
+  
+  const FORMULES = {
+    confort: { nom: 'Confort', prix: 380, heures: 3, sup: 150, equipe: '2 déménageurs' },
+    premium: { nom: 'Premium', prix: 520, heures: 3, sup: 170, equipe: '4 déménageurs' },
+    'no-stress': { nom: 'No Stress', prix: 850, heures: 5, sup: 170, equipe: '4 déménageurs' },
+  };
+  let formule = null;
+  try { formule = FORMULES[new URLSearchParams(location.search).get('formule')] || null; } catch (e) {  }
+  function lierDevis() {
+    const e = mem.est, param = 'est=' + [e.service, e.heures, e.etage].join(',');
+    $$('a[href^="devis.html"]:not([data-formule]):not([data-devis-fixe])').forEach(a => a.setAttribute('href', 'devis.html?' + param + (a.hasAttribute('data-est-vers-devis') ? '&choix=1' : '')));
+  }
+
+  
+  function peindre(btn, on) {
+    btn.style.background = on ? 'var(--violet)' : '#fff';
+    btn.style.color = on ? 'var(--jaune)' : 'var(--violet)';   
+    btn.style.borderColor = on ? 'var(--violet)' : 'var(--gris-trait)';
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+
+  
+  const eur = n => n.toLocaleString('fr-BE') + ' €';
+  const TAUX = { Particulier: { camion: 70, lift: 60, tractable: 120 }, Professionnel: { camion: 80, lift: 70, tractable: 150 } };
+  function estimer(e, client) {
+    const t = TAUX[client] || TAUX.Particulier, h = e.heures, lignes = [];
+    let total = 0, surDevis = false;
+    if (e.service === 'inter') return { total: 'Sur devis', calcul: 'Pour l\'étranger, le prix se fait sur devis.' };   
+    if (e.service === 'dem' || e.service === 'both') { const hd = Math.max(2, h); total += hd * t.camion; lignes.push(hd + ' h × ' + t.camion + '\u00a0€ (déménagement)'); }
+    if (e.service === 'lift' || e.service === 'both' || e.service === 'tractable') {
+      const nom = e.service === 'tractable' ? 'lift tractable' : 'lift', taux = e.service === 'tractable' ? t.tractable : t.lift;
+      if (e.etage > 4) { surDevis = true; lignes.push(nom + ' au-delà du 4e étage : sur devis'); }
+      else { total += taux * h; lignes.push(h + ' h × ' + taux + '\u00a0€ (' + nom + ')'); }
+    }
+    return { total: surDevis && !total ? 'Sur devis' : eur(total), calcul: lignes.join(' + ') };
+  }
+  function rendreEst() {
+    const e = mem.est, fo = form && d.formule;
+    const r = fo ? { total: eur(fo.prix), calcul: 'Formule ' + fo.nom + ' : ' + fo.heures + '\u00a0h comprises, ' + fo.equipe + '. Heure supplémentaire : ' + eur(fo.sup) + '.' } : estimer(e, form ? d.client : 'Particulier');
+    $$('[data-est-svc]').forEach(b => peindre(b, b.dataset.estSvc === e.service));
+    $$('[data-est-etage]').forEach(b => peindre(b, Number(b.dataset.estEtage) === e.etage));
+    const f = $('[data-est-etages]'); if (f) f.hidden = e.service === 'dem';
+    $$('[data-est-heures]').forEach(x => { x.textContent = e.heures + ' h'; });
+    $$('[data-est-total]').forEach(x => { x.textContent = r.total; });
+    $$('[data-est-calcul]').forEach(x => { x.textContent = x.dataset.estCalcul === 'devis' && !fo && e.service !== 'inter' ? r.calcul + '. Indicatif, le devis fait foi.' : r.calcul; });
+  }
+  function majEst(p) { mem.est = Object.assign({}, mem.est, p); sauver(); lierDevis(); rendreEst(); }
+
+  document.addEventListener('click', ev => {
+    const b = ev.target.closest('[data-est-svc],[data-est-etage],[data-est-moins],[data-est-plus],[data-est-vers-devis]');
+    if (!b) return;
+    if (b.hasAttribute('data-est-svc')) majEst({ service: b.dataset.estSvc });
+    else if (b.hasAttribute('data-est-etage')) majEst({ etage: Number(b.dataset.estEtage) });
+    else if (b.hasAttribute('data-est-moins')) majEst({ heures: Math.max(1, mem.est.heures - 1) });
+    else if (b.hasAttribute('data-est-plus')) majEst({ heures: Math.min(12, mem.est.heures + 1) });
+    else if (b.hasAttribute('data-est-vers-devis')) { mem.service = mem.est.service; sauver(); } 
+  });
+
+  
+  const form = $('[data-devis]');
+  const ETAGES = ['Rez', '1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e', '9e à 24e'];   
+  const NOMS = ['Service', 'Adresses', 'Date et volume', 'Coordonnées'];
+  const SERVICES = { dem: 'Déménagement', lift: 'Location de lift', tractable: 'Lift tractable', both: 'Les deux', inter: 'Déménagement international' };
+  const d = {
+    etape: formule ? 2 : 1, envoye: false, erreur: false, service: formule ? 'dem' : (mem.service || ''), client: 'Particulier', formule: formule,
+    depart: { commune: '', etage: 'Rez', asc: '' }, arrivee: { commune: '', etage: 'Rez', asc: '' },
+    date: '', volume: 'Je ne sais pas', message: '', prenom: '', tel: '', mail: '',
+  };
+  const hautSansAsc = () => [d.depart, d.arrivee].some(l => ETAGES.indexOf(l.etage) >= 3 && l.asc !== 'Oui');
+  function choisirService(k) { d.service = k; mem.service = k; mem.est = Object.assign({}, mem.est, { service: k }); sauver(); lierDevis(); }
+
+  function rendreDevis() {
+    if (!form) return;
+    const svc = d.service || (hautSansAsc() ? 'both' : '');
+    $$('[data-devis-svc]').forEach(b => peindre(b, d.service === b.dataset.devisSvc));
+    $$('[data-devis-client]').forEach(b => peindre(b, d.client === b.dataset.devisClient));
+    $$('[data-prix]').forEach(x => { x.textContent = (TAUX[d.client] || TAUX.Particulier)[x.dataset.prix] + '\u00a0€/h'; });   
+    $$('[data-etape]').forEach(p => { p.hidden = Number(p.dataset.etape) !== d.etape; });
+    $('[data-envoye]').hidden = !d.envoye;
+    $('[data-encours]').hidden = d.envoye;
+    const noms = d.formule ? ['Formule'].concat(NOMS.slice(1)) : NOMS;   
+    $('[data-etape-texte]').textContent = 'Étape ' + d.etape + ' sur 4 · ' + noms[d.etape - 1];
+    const pas1 = $('[data-pas] .nv-pas-nom'); if (pas1) pas1.textContent = noms[0];
+    const fc = $('[data-formule-choisie]');
+    if (fc) {
+      fc.hidden = !d.formule;
+      if (d.formule) {
+        $('[data-formule-nom]', fc).textContent = d.formule.nom;
+        $('[data-formule-prix]', fc).textContent = eur(d.formule.prix);
+        $('[data-formule-detail]', fc).textContent = d.formule.heures + '\u00a0h comprises, ' + d.formule.equipe + ', lift et camion de 20\u00a0m³';
+      }
+    }
+    const note = $('[data-prix-note]'); if (note) note.textContent = d.formule ? d.formule.heures + '\u00a0h comprises' : d.service === 'inter' ? '' : 'indicatif, le devis fait foi';
+    $('[data-pct]').textContent = (d.etape * 25) + ' %';
+    $('[data-barre]').style.clipPath = 'inset(0 ' + (100 - d.etape * 25) + '% 0 0 round 999px)';   
+    $$('[data-pas]').forEach((li, i) => {
+      const on = i + 1 <= d.etape;
+      li.style.color = on ? 'var(--violet)' : 'var(--gris-texte)';
+      li.firstElementChild.style.background = on ? 'var(--jaune)' : '#fff';
+    });
+    $('[data-retour]').hidden = d.etape === (d.formule ? 2 : 1);   
+    $('[data-cta]').textContent = d.etape === 4 ? 'Envoyer ma demande' : 'Continuer';
+    $('[data-conseil]').hidden = !(hautSansAsc() && d.service === 'dem' && !d.formule);   
+    $('[data-erreur]').hidden = !d.erreur;
+    const tel = $('[data-tel]');
+    tel.style.borderColor = d.erreur ? 'var(--violet)' : 'var(--gris-trait)';
+    tel.style.borderStyle = d.erreur ? 'dashed' : 'solid';   
+    if (d.erreur) { tel.setAttribute('aria-invalid', 'true'); tel.setAttribute('aria-describedby', 'nv-erreur-tel'); }
+    else { tel.removeAttribute('aria-invalid'); tel.removeAttribute('aria-describedby'); }
+    const recap = {
+      Service: d.formule ? 'Formule ' + d.formule.nom : (SERVICES[svc] || '…'),
+      Client: d.client,
+      Trajet: (d.depart.commune || '…') + ' → ' + (d.arrivee.commune || '…'),
+      Date: d.date ? new Date(d.date).toLocaleDateString('fr-BE') : '…',
+      Volume: d.volume,
+    };
+    $$('[data-recap]').forEach(x => { x.textContent = recap[x.dataset.recap]; });
+    const lc = $('[data-recap="Client"]'); if (lc) lc.parentElement.hidden = !!d.formule;   
+    $$('[data-prenom]').forEach(x => { x.textContent = d.prenom ? ' ' + d.prenom : ''; });
+    $$('[data-tel-merci]').forEach(x => { x.textContent = d.tel; });
+    rendreEst();
+  }
+
+  
+  
+  function focusTitre() {
+    const t = $('[data-etape="' + d.etape + '"] h2');
+    if (t) { t.setAttribute('tabindex', '-1'); t.focus({ preventScroll: true }); }
+  }
+  function avancer() {
+    const panneau = $('[data-etape="' + d.etape + '"]');
+    const invalide = $$(':invalid', panneau)[0];
+    if (invalide) { invalide.reportValidity(); return; }
+    if (d.etape === 1 && !d.service) choisirService('dem');
+    if (d.etape === 2 && hautSansAsc() && d.service === 'dem' && !d.formule) choisirService('both');
+    if (d.etape === 4) {
+      if (!d.tel.trim()) { d.erreur = true; rendreDevis(); $('[data-tel]').focus(); return; }   
+      racine.classList.add('nv-anime'); d.envoye = true; rendreDevis();
+      const h = $('[data-envoye] h1'); if (h) h.focus();   
+      return;
+    }
+    racine.classList.add('nv-anime'); d.etape += 1; rendreDevis(); window.scrollTo(0, 0); focusTitre();
+  }
+
+  if (form) {
+    form.noValidate = true;   
+    form.addEventListener('submit', ev => ev.preventDefault());   
+    form.addEventListener('keydown', ev => {
+      
+      if (ev.key === 'Enter' && !ev.isComposing && ev.target.matches('input:not([list])')) { ev.preventDefault(); avancer(); }
+    });
+    const saisie = ev => {
+      const c = ev.target.closest('[data-f]');
+      if (!c) return;
+      const lieu = c.closest('[data-lieu]');
+      if (lieu) {
+        d[lieu.dataset.lieu][c.dataset.f] = c.value;
+        
+        if (c.dataset.f === 'etage') { mem.est = Object.assign({}, mem.est, { etage: [d.depart, d.arrivee].some(l => ETAGES.indexOf(l.etage) >= 5) ? 24 : 4 }); sauver(); lierDevis(); }
+      }
+      else { d[c.dataset.f] = c.value; d.erreur = false; }
+      rendreDevis();
+    };
+    form.addEventListener('input', saisie);
+    form.addEventListener('change', saisie);
+    document.addEventListener('click', ev => {
+      const b = ev.target.closest('[data-devis-svc],[data-devis-client],[data-retour],[data-recommencer],[data-cta-bouton]');
+      if (!b) return;
+      if (b.hasAttribute('data-cta-bouton')) { avancer(); return; }
+      if (b.hasAttribute('data-devis-svc')) choisirService(b.dataset.devisSvc);
+      else if (b.hasAttribute('data-devis-client')) d.client = b.dataset.devisClient;
+      else if (b.hasAttribute('data-retour')) { racine.classList.add('nv-anime'); d.etape = Math.max(d.formule ? 2 : 1, d.etape - 1); }
+      else if (b.hasAttribute('data-recommencer')) { racine.classList.add('nv-anime'); d.etape = 1; d.envoye = false; d.formule = null; d.service = mem.service || ''; }
+      rendreDevis();
+      if (b.hasAttribute('data-retour') || b.hasAttribute('data-recommencer')) focusTitre();
+    });
+    rendreDevis();
+  } else {
+    rendreEst();
+  }
+  lierDevis();
+
+  
+  const mb = $('.nv-menu-bouton'), menu = $('#nv-menu');
+  if (mb && menu) {
+    mb.addEventListener('click', () => {
+      const ouvre = menu.hidden;
+      menu.hidden = !ouvre;
+      mb.setAttribute('aria-expanded', ouvre ? 'true' : 'false');
+      mb.textContent = ouvre ? 'Fermer' : 'Menu';
+    });
+  }
+
+  
+  const barre = $('.nv-barre'), boutons = $('#hero-actions');
+  if (barre && boutons && 'IntersectionObserver' in window) {
+    racine.classList.add('barre-auto');
+    const poser = visible => {
+      barre.classList.toggle('visible', visible);
+      if (visible) barre.removeAttribute('inert'); else barre.setAttribute('inert', '');
+    };
+    poser(false);
+    new IntersectionObserver(entrees => { poser(!entrees[0].isIntersecting); }, { rootMargin: '-' + ((document.querySelector('header') || { offsetHeight: 72 }).offsetHeight + 1) + 'px 0px 0px 0px', threshold: 0  }).observe(boutons);
+  }
+
+  
+  const chariot = $('.nv-lift__chariot'), cible = $('#appel-final');
+  if (chariot && cible && (racine.classList.contains('lift-css') || racine.classList.contains('lift-js'))) {
+    const repli = racine.classList.contains('lift-js');
+    let arrivee = 1, arrive = false, prevu = false;
+    
+    const mesurer = () => {
+      const bas = cible.getBoundingClientRect().bottom + window.scrollY;
+      const max = racine.scrollHeight - window.innerHeight;
+      arrivee = Math.max(1, Math.min(max, Math.round(bas + 24 - window.innerHeight)));
+      racine.style.setProperty('--arrivee', arrivee + 'px');
+      suivre();
+    };
+    const suivre = () => {
+      prevu = false;
+      const p = Math.min(1, Math.max(0, window.scrollY / arrivee));
+      if (repli) chariot.style.transform = 'translateY(' + ((p - 1) * 100).toFixed(3) + '%)';
+      if (!arrive && p >= 0.999) { arrive = true; racine.classList.add('lift-pose'); }
+      else if (arrive && p < 0.95) { arrive = false; racine.classList.remove('lift-pose'); }
+    };
+    window.addEventListener('scroll', () => { if (!prevu) { prevu = true; requestAnimationFrame(suivre); } }, { passive: true });
+    window.addEventListener('resize', mesurer, { passive: true });
+    if (window.ResizeObserver) new ResizeObserver(mesurer).observe(document.body);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(mesurer);
+    mesurer();
+  }
+})();
+</script>
+</body>
+</html>

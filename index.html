@@ -5,8 +5,10 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Déménagement et location de lift à Bruxelles | DéménaGo</title>
-<meta name="description" content="Déménagement et location de lift (monte-meubles) dans les 19 communes de Bruxelles. 70 €/h, lift 60 €/h. Estimation en ligne, devis : 0485 15 27 02.">
+<meta name="description" content="Déménagement et location de lift (monte-meubles) dans les 19 communes de Bruxelles, et à l'international sur devis. Devis gratuit : 0485 15 27 02.">
 <meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="32x32" href="assets-reduits/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets-reduits/favicon-180.png">
 <style>
 
 @font-face {
@@ -240,6 +242,9 @@ a.scp0:active, a.scp1:active, button:active, .nv-barre a:active { transform: sca
 .nv-lien svg { transition: transform 200ms var(--ease-out); }
 @media (hover: hover) and (pointer: fine) { .nv-lien:hover svg { transform: translateX(4px); } }
 @media (prefers-reduced-motion: reduce) { .nv-lien svg { transition: none; } .nv-lien:hover svg { transform: none; } }
+.scp0 > svg:last-child { transition: transform 200ms var(--ease-out); }   
+@media (hover: hover) and (pointer: fine) { .scp0:hover > svg:last-child { transform: translateX(4px); } }
+@media (prefers-reduced-motion: reduce) { .scp0 > svg:last-child { transition: none; } .scp0:hover > svg:last-child { transform: none; } }
 
 
 .nv-faq-plus { transition: transform 200ms var(--ease-out); }
@@ -286,6 +291,70 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
 @media (min-width: 960px) and (max-width: 1099.98px) {
   .nv-tel-numero { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 }
+
+
+
+
+.nv-est { grid-template-areas: "tete" "reglages" "resultat"; row-gap: 32px !important; }
+.nv-est-tete { grid-area: tete; }
+.nv-est-reglages { grid-area: reglages; }
+.nv-est-resultat { grid-area: resultat; }
+@media (min-width: 960px) {
+  .nv-est { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; grid-template-areas: "tete reglages" "resultat reglages"; column-gap: 56px; align-content: start; }
+}
+
+
+.nv-formules { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 32px var(--gouttiere); margin-top: 40px; align-items: stretch; }
+.nv-formule { position: relative; display: flex; flex-direction: column; gap: 14px; border: 2px solid var(--gris-ligne); border-radius: var(--rayon); padding: clamp(24px, 3vw, 36px); background: #fff; }
+.nv-formule--phare { border-color: var(--violet); box-shadow: 0 0 0 1px var(--violet), var(--ombre-formulaire); }   
+.nv-formule__phare { position: absolute; top: -15px; left: clamp(24px, 3vw, 36px); padding: 4px 12px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-size: 14px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.nv-formule h3 { margin: 0; font-weight: 800; font-stretch: 118%; font-size: 1.7rem; line-height: 1.05; }
+.nv-formule__prix { margin: 0; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; }
+.nv-formule__prix b { font-weight: 900; font-stretch: 125%; font-size: clamp(2.6rem, 1.8rem + 2vw, 3.4rem); line-height: 1; letter-spacing: -0.03em; }
+.nv-formule__prix span { font-size: 18px; font-weight: 700; }
+.nv-formule ul { list-style: none; margin: 0; padding: 14px 0 0; border-top: 1.5px solid var(--gris-ligne); display: grid; gap: 10px; font-size: 17px; font-weight: 600; }
+.nv-formule li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+.nv-formule li > span:first-child { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune); }
+.nv-formule__sup { margin: 0; font-size: 16px; color: var(--gris-texte); }
+.nv-formule__sup b { color: var(--violet); }
+.nv-formule > a { margin-top: auto; }
+.nv-formules-communs { margin: 28px 0 0; padding: 20px 24px; border-radius: 20px; background: var(--creme); font-size: 17px; }
+.nv-formules-communs b { display: block; margin-bottom: 4px; }
+
+
+.nv-image-a-venir { position: relative; margin: 0; min-height: clamp(220px, 28vw, 360px); border-radius: 14px; border: 2px dashed var(--gris-trait); background: var(--hachures); display: grid; place-items: center; padding: 20px; box-sizing: border-box; }
+.nv-image-a-venir figcaption { max-width: 34ch; text-align: center; font-size: 15px; font-weight: 700; background: #fff; border-radius: 12px; padding: 10px 14px; }
+
+
+.nv-heure { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--gouttiere); margin-top: 40px; }
+.nv-heure article { display: flex; flex-direction: column; gap: 12px; border: 2px solid var(--gris-ligne); border-radius: var(--rayon); padding: clamp(24px, 3vw, 36px); }
+.nv-heure h3 { margin: 0; font-weight: 800; font-stretch: 118%; font-size: 1.55rem; line-height: 1.05; }
+.nv-heure p { margin: 0; }
+.nv-heure .nv-heure__prix { font-size: 18px; font-weight: 600; }
+.nv-heure .nv-heure__prix b { font-weight: 800; font-stretch: 118%; font-size: var(--montant); line-height: 1.1; }
+.nv-heure .nv-heure__note { font-size: 16px; color: var(--gris-texte); }
+.nv-heure article > a { margin-top: auto; }
+
+
+.nv-prix-mobile { display: none; }
+@media (max-width: 959.98px) { .nv-prix-mobile { display: flex; } }
+
+
+.nv-conseils { margin: 22px 0 0; padding: 18px 20px; border-radius: 16px; background: var(--creme); border: 1.5px solid var(--gris-ligne); }
+.nv-conseils p { margin: 0 0 8px; font-weight: 800; }
+.nv-conseils ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: 16px; }
+.nv-conseils li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+.nv-conseils li > span:first-child { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune); font-weight: 800; font-size: 14px; }
+.nv-legal { max-width: 760px; }
+.nv-legal h2 { font-weight: 800; font-stretch: 118%; font-size: 1.45rem; line-height: 1.15; margin: 40px 0 12px; }
+.nv-legal p, .nv-legal li { color: var(--gris-texte); text-wrap: pretty; }
+.nv-legal p { margin: 0 0 12px; }
+.nv-legal ul { margin: 0 0 12px; padding-left: 22px; }
+.nv-legal strong, .nv-legal a { color: var(--violet); }
+.nv-legal dl { margin: 0 0 12px; display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; }
+.nv-legal dt { font-weight: 700; }
+.nv-legal dd { margin: 0; color: var(--gris-texte); }
+@media (max-width: 600px) { .nv-legal dl { grid-template-columns: 1fr; gap: 2px; } .nv-legal dd { margin-bottom: 10px; } }
 </style>
 </head>
 <body>
@@ -317,10 +386,10 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       </nav>
       <a href="tel:+32485152702" style="display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 16px; white-space: nowrap;" class="nv-desk">
         <span style="width: 44px; height: 44px; border-radius: 999px; border: 2px solid var(--violet); background: var(--jaune); display: grid; place-items: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span><span class="nv-tel-numero">0485 15 27 02</span></a>
-      <a href="devis.html" class="scp0 nv-desk" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0px 22px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap;">Demander un devis</a>
+      <a href="devis.html" class="scp0 nv-desk" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0px 22px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap;">Demander un devis <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
 
   <button type="button" class="nv-menu-bouton" aria-expanded="false" aria-controls="nv-menu" style="font: inherit; font-weight: 700; font-size: 15px; color: var(--violet); background: #fff; border: 1.5px solid var(--gris-trait); border-radius: 999px; min-height: 44px; padding: 0 18px; cursor: pointer;">Menu</button></div>
-  <nav id="nv-menu" class="nv-menu" aria-label="Menu" hidden="" style="display: grid; padding: 8px var(--interieur) 20px; border-top: 1px solid var(--gris-ligne);"><a href="demenagement.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Déménagement</a><a href="location-lift.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Location de lift</a><a href="tarifs.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Tarifs</a><a href="zone.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Zone</a></nav></header><main id="contenu" tabindex="-1">
+  <nav id="nv-menu" class="nv-menu" aria-label="Menu" hidden="" style="display: grid; padding: 8px var(--interieur) 20px; border-top: 1px solid var(--gris-ligne);"><a href="demenagement.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Déménagement</a><a href="location-lift.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Location de lift</a><a href="tarifs.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Tarifs</a><a href="zone.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Zone</a><a href="international.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">International</a></nav></header><main id="contenu" tabindex="-1">
 
   <section style="padding: var(--gouttiere);">
     <div style="max-width: 1344px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 56px; align-items: center; padding: clamp(28px,5vw,72px) var(--interieur) clamp(40px,5vw,72px);">
@@ -334,7 +403,7 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
         </div>
         <ul style="display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 26px 0px 0px; padding: 0px; list-style: none; font-size: 15px; font-weight: 600;">
           
-            <li style="display: flex; align-items: center; gap: 8px;"><span style="display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>Devis gratuit <span style="font-size: max(0.8em, 14px); font-weight: 500; font-style: italic;">(à confirmer)</span></li>
+            <li style="display: flex; align-items: center; gap: 8px;"><span style="display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>Devis gratuit</li>
           
             <li style="display: flex; align-items: center; gap: 8px;"><span style="display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>Particuliers et professionnels <span style="font-size: max(0.8em, 14px); font-weight: 500; font-style: italic;"></span></li>
           
@@ -352,7 +421,7 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
         <ul style="list-style: none; margin: 0px auto; padding: 18px var(--interieur); max-width: 1344px; display: flex; justify-content: space-between; gap: 12px 32px; flex-wrap: wrap; font-weight: 700; font-size: 16px;">
           <li style="display: flex; align-items: center; gap: 10px;"><span style="display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg></span>Une dizaine d'années de métier</li>
           <li style="display: flex; align-items: center; gap: 10px;"><span style="display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>Les 19 communes de Bruxelles, et en dehors</li>
-          <li style="display: flex; align-items: center; gap: 10px;"><span style="display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></span>Prix affichés : 70&nbsp;€ et 60&nbsp;€ de l'heure</li>
+          <li style="display: flex; align-items: center; gap: 10px;"><span style="display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune);"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20M12 2a15.3 15.3 0 0 0 0 20"></path></svg></span>Et à l'international, sur devis</li>
         </ul>
       </div>
     
@@ -360,7 +429,7 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
 
     <section id="tarifs" style="padding: var(--section-y) var(--interieur);"><div style="max-width: 1200px; margin: 0px auto;">
       <p style="display: inline-flex; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--jaune); margin: 0px 0px 18px;">Nos services</p>
-      <h2 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; letter-spacing: -0.015em; margin: 0px; font-size: var(--h2); text-wrap: balance;">Le déménagement, et le lift quand il le faut</h2>
+      <h2 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; letter-spacing: -0.015em; margin: 0px; font-size: var(--h2); text-wrap: balance;">Déménagement et lift</h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: var(--gouttiere); margin-top: 40px;">
         
           <article style="position: relative; border: 2px solid var(--gris-ligne); border-radius: 28px; padding: clamp(24px, 3vw, 40px); display: flex; flex-direction: column; gap: 18px;" class="nv-sub nv-sub6">
@@ -369,8 +438,8 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
             <h3 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: var(--h3-service);">Le déménagement<small style="display: block; font-size: 0.5em; font-weight: 600; font-stretch: 100%; margin-top: 8px;">particuliers et professionnels</small></h3>
             <p style="margin: 0px; font-size: 18px; color: var(--gris-texte);">Vos meubles et vos cartons, d'une adresse à l'autre, à Bruxelles et en dehors.</p>
             <div style="display: grid; gap: 4px; padding-top: 14px; border-top: 1.5px solid var(--gris-ligne);">
-              <p style="margin: 0px; font-size: 18px; font-weight: 600;"><span style="font-weight: 800; font-stretch: 118%; font-size: var(--montant); line-height: 1.1;">70&nbsp;€</span> de l'heure</p>
-              <p style="margin: 0px; font-size: 16px; color: var(--gris-texte);">Camion, minimum 2 heures.</p>
+              <p style="margin: 0px; font-size: 18px; font-weight: 700;">Trois formules tout compris</p>
+              <p style="margin: 0px; font-size: 16px; color: var(--gris-texte);">Chargement, transport et déchargement.</p>
             </div>
             <ul style="display: flex; flex-wrap: wrap; gap: 8px; margin: 0px; padding: 0px; list-style: none;">
               <li style="font-size: 14px; font-weight: 600; border-radius: 999px; background: var(--creme); border: 1.5px solid var(--violet); padding: 5.5px 12.5px;">Particuliers</li><li style="font-size: 14px; font-weight: 600; border-radius: 999px; background: var(--creme); border: 1.5px solid var(--violet); padding: 5.5px 12.5px;">Professionnels</li>
@@ -384,8 +453,8 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
             <h3 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: var(--h3-service);">La location de lift<small style="display: block; font-size: 0.5em; font-weight: 600; font-stretch: 100%; margin-top: 8px;">le monte-meubles</small></h3>
             <p style="margin: 0px; font-size: 18px; color: var(--gris-texte);">Quand l'escalier ou l'ascenseur ne suffit pas, le lift fait passer les meubles par la fenêtre.</p>
             <div style="display: grid; gap: 4px; padding-top: 14px; border-top: 1.5px solid var(--gris-ligne);">
-              <p style="margin: 0px; font-size: 18px; font-weight: 600;"><span style="font-weight: 800; font-stretch: 118%; font-size: var(--montant); line-height: 1.1;">60&nbsp;€</span> de l'heure</p>
-              <p style="margin: 0px; font-size: 16px; color: var(--gris-texte);">Du 1er au 4e étage. Au-delà, 10&nbsp;€ de plus par étage. Le week-end, 10&nbsp;€ de plus (à confirmer : par heure ou en une fois).</p>
+              <p style="margin: 0px; font-size: 18px; font-weight: 700;">Jusqu'au 24e étage</p>
+              <p style="margin: 0px; font-size: 16px; color: var(--gris-texte);">Toujours avec son opérateur. Et le lift tractable pour les accès difficiles.</p>
             </div>
             <ul style="display: flex; flex-wrap: wrap; gap: 8px; margin: 0px; padding: 0px; list-style: none;">
               <li style="font-size: 14px; font-weight: 600; border-radius: 999px; background: var(--creme); border: 1.5px solid var(--violet); padding: 5.5px 12.5px;">Avec un déménagement</li><li style="font-size: 14px; font-weight: 600; border-radius: 999px; background: var(--creme); border: 1.5px solid var(--violet); padding: 5.5px 12.5px;">Lift seul</li>
@@ -396,53 +465,43 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       </div>
     </div></section>
 
-    <section id="estimation" style="padding: 0 var(--gouttiere);"><div style="background: var(--creme); border-radius: 28px; padding: var(--section-y) var(--interieur);"><div style="max-width: 1200px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 56px; align-items: start;">
-      <div>
-        <p style="display: inline-flex; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--jaune); margin: 0px 0px 18px;">Estimation en direct</p>
-        <h2 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; letter-spacing: -0.015em; margin: 0px; font-size: var(--h2); text-wrap: balance;">Combien ça coûte ?</h2>
-        <p style="margin: 18px 0px 0px; font-size: var(--chapeau); color: var(--gris-texte); max-width: 44ch;">Trois réglages, un ordre de prix tout de suite. Le devis précis suit votre demande.</p>
-        <div style="margin-top: 32px; background: #fff; border: 2px solid var(--violet); border-radius: 20px; padding: 24px 26px;">
-          <p style="margin: 0px; font-size: 15px; font-weight: 700;">Estimation indicative</p>
-          <p style="margin: 6px 0px 0px; font-weight: 900; font-stretch: 125%; font-size: clamp(2.6rem, 1.4rem + 3vw, 3.8rem); line-height: 1.05; letter-spacing: -0.03em;" data-est-total="" aria-live="polite" aria-atomic="true">420 €</p>
-          <p style="margin: 8px 0px 0px; font-size: 15px; color: var(--gris-texte);" data-est-calcul="">3 h × 70&nbsp;€ (déménagement) + 3 h × 70 € (lift, +10 € étages)</p>
-          <p style="margin: 6px 0px 0px; font-size: 14px; color: var(--gris-texte); font-style: italic;">Supplément week-end : par heure ou en une fois (à confirmer). TVA : comprise ou non (à confirmer).</p>
-          <a href="devis.html" class="scp0" style="margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; text-decoration: none;" data-est-vers-devis="">Recevoir le devis exact</a>
-        </div>
+    <section id="formules" style="padding: 0 var(--interieur) var(--section-y);"><div style="max-width: 1200px; margin: 0px auto;">
+      <p style="display: inline-flex; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--jaune); margin: 0px 0px 18px;">Nos formules</p>
+      <h2 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; letter-spacing: -0.015em; margin: 0px; font-size: var(--h2); text-wrap: balance;">Trois formules, tout compris</h2>
+      <p style="margin: 18px 0px 0px; font-size: var(--chapeau); color: var(--gris-texte); max-width: 52ch;">Un prix connu d'avance pour la durée de la formule. Au-delà, l'heure supplémentaire est au tarif de la formule.</p>
+      <div class="nv-formules">
+        <article class="nv-formule"><h3>Confort</h3><p class="nv-formule__prix"><b>380&nbsp;€</b><span>3&nbsp;h comprises</span></p><ul><li><span aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span>2 déménageurs au sol</span></li><li><span aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Lift et camion de 20&nbsp;m³</span></li></ul><p class="nv-formule__sup">Heure supplémentaire : <b>150&nbsp;€</b></p><a href="devis.html?formule=confort" data-formule="confort" class="scp0" style="display: flex; justify-content: center; align-items: center; gap: 10px; min-height: 60px; padding: 0px 28px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 18px; text-decoration: none; white-space: nowrap;">Demander un devis <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a></article>
+        <article class="nv-formule nv-formule--phare"><p class="nv-formule__phare" style="margin: 0px;">Le plus demandé</p><h3>Premium</h3><p class="nv-formule__prix"><b>520&nbsp;€</b><span>3&nbsp;h comprises</span></p><ul><li><span aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span>2 déménageurs au sol et 2 à l'étage</span></li><li><span aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Lift et camion de 20&nbsp;m³</span></li></ul><p class="nv-formule__sup">Heure supplémentaire : <b>170&nbsp;€</b></p><a href="devis.html?formule=premium" data-formule="premium" class="scp0" style="display: flex; justify-content: center; align-items: center; gap: 10px; min-height: 60px; padding: 0px 28px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 18px; text-decoration: none; white-space: nowrap;">Demander un devis <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a></article>
+        <article class="nv-formule"><h3>No Stress</h3><p class="nv-formule__prix"><b>850&nbsp;€</b><span>5&nbsp;h comprises</span></p><ul><li><span aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span>2 déménageurs au sol et 2 à l'étage</span></li><li><span aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span><span>Lift et camion de 20&nbsp;m³</span></li></ul><p class="nv-formule__sup">Heure supplémentaire : <b>170&nbsp;€</b></p><a href="devis.html?formule=no-stress" data-formule="no-stress" class="scp0" style="display: flex; justify-content: center; align-items: center; gap: 10px; min-height: 60px; padding: 0px 28px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 18px; text-decoration: none; white-space: nowrap;">Demander un devis <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a></article>
       </div>
-      <div style="display: grid; gap: 26px;">
-        <fieldset style="border: 0px; margin: 0px; padding: 0px;"><legend style="font-size: 15px; font-weight: 700; margin-bottom: 10px;">Ce qu'il vous faut</legend>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;"><button aria-pressed="false" style="flex: 1 1 auto; font: inherit; font-weight: 600; font-size: 16px; min-height: 52px; padding: 0px 16px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer; white-space: nowrap;" data-est-svc="dem">Déménagement</button><button aria-pressed="false" style="flex: 1 1 auto; font: inherit; font-weight: 600; font-size: 16px; min-height: 52px; padding: 0px 16px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer; white-space: nowrap;" data-est-svc="lift">Location de lift</button><button aria-pressed="true" style="flex: 1 1 auto; font: inherit; font-weight: 600; font-size: 16px; min-height: 52px; padding: 0px 16px; border-radius: 12px; border: 1.5px solid var(--violet); background: var(--violet); color: var(--jaune); cursor: pointer; white-space: nowrap;" data-est-svc="both">Les deux</button></div>
-        </fieldset>
-        <fieldset style="border: 0px; margin: 0px; padding: 0px;"><legend style="font-size: 15px; font-weight: 700; margin-bottom: 10px;">Durée estimée</legend>
-          <div style="display: flex; align-items: center; gap: 14px;">
-            <button aria-label="Une heure de moins" style="width: 52px; height: 52px; border-radius: 999px; border: 2px solid var(--violet); background: #fff; color: var(--violet); font: inherit; font-weight: 700; font-size: 24px; cursor: pointer;" data-est-moins="">−</button>
-            <span style="min-width: 110px; text-align: center; font-weight: 800; font-stretch: 118%; font-size: 28px;" data-est-heures="">3 h</span>
-            <button aria-label="Une heure de plus" style="width: 52px; height: 52px; border-radius: 999px; border: 2px solid var(--violet); background: var(--jaune); color: var(--violet); font: inherit; font-weight: 700; font-size: 24px; cursor: pointer;" data-est-plus="">+</button>
-          </div>
-          <p style="margin: 8px 0px 0px; font-size: 14px; color: var(--gris-texte);">Un studio : 2 à 3 h. Un 2 chambres : 4 à 6&nbsp;h <span style="font-style: italic;">(repères à confirmer)</span>.</p>
-        </fieldset>
-        
-          <fieldset style="border: 0px; margin: 0px; padding: 0px;" data-est-etages=""><legend style="font-size: 15px; font-weight: 700; margin-bottom: 10px;">Étage le plus haut pour le lift</legend>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;"><button aria-pressed="false" style="font: inherit; font-weight: 700; font-size: 16px; min-width: 52px; min-height: 52px; padding: 0px 10px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer;" data-est-etage="1">1er</button><button aria-pressed="false" style="font: inherit; font-weight: 700; font-size: 16px; min-width: 52px; min-height: 52px; padding: 0px 10px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer;" data-est-etage="2">2e</button><button aria-pressed="false" style="font: inherit; font-weight: 700; font-size: 16px; min-width: 52px; min-height: 52px; padding: 0px 10px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer;" data-est-etage="3">3e</button><button aria-pressed="false" style="font: inherit; font-weight: 700; font-size: 16px; min-width: 52px; min-height: 52px; padding: 0px 10px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer;" data-est-etage="4">4e</button><button aria-pressed="true" style="font: inherit; font-weight: 700; font-size: 16px; min-width: 52px; min-height: 52px; padding: 0px 10px; border-radius: 12px; border: 1.5px solid var(--violet); background: var(--violet); color: var(--jaune); cursor: pointer;" data-est-etage="5">5e</button><button aria-pressed="false" style="font: inherit; font-weight: 700; font-size: 16px; min-width: 52px; min-height: 52px; padding: 0px 10px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer;" data-est-etage="6">6e</button><button aria-pressed="false" style="font: inherit; font-weight: 700; font-size: 16px; min-width: 52px; min-height: 52px; padding: 0px 10px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer;" data-est-etage="7">7e</button><button aria-pressed="false" style="font: inherit; font-weight: 700; font-size: 16px; min-width: 52px; min-height: 52px; padding: 0px 10px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer;" data-est-etage="8">8+</button></div>
-          </fieldset>
-        
-        <fieldset style="border: 0px; margin: 0px; padding: 0px;"><legend style="font-size: 15px; font-weight: 700; margin-bottom: 10px;">Jour</legend>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;"><button aria-pressed="true" style="flex: 1 1 auto; font: inherit; font-weight: 600; font-size: 16px; min-height: 52px; padding: 0px 16px; border-radius: 12px; border: 1.5px solid var(--violet); background: var(--violet); color: var(--jaune); cursor: pointer;" data-est-jour="0">En semaine</button><button aria-pressed="false" style="flex: 1 1 auto; font: inherit; font-weight: 600; font-size: 16px; min-height: 52px; padding: 0px 16px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer;" data-est-jour="1">Le week-end</button></div>
-        </fieldset>
-      </div>
-    </div></div></section>
+      <p class="nv-formules-communs"><b>Dans chaque formule</b>Chargement, transport, déchargement, matériel de protection. Déplacement gratuit dans Bruxelles. Frais administratifs inclus.</p>
+      <a href="tarifs.html" style="margin-top: 28px; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; font-size: 18px; text-decoration: none; min-height: 44px;" class="nv-lien">Tous nos tarifs <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+    </div></section>
 
-    <section style="padding: var(--section-y) var(--interieur);"><div style="max-width: 1200px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 56px; align-items: start;">
-      <div>
-        <p style="display: inline-flex; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--jaune); margin: 0px 0px 18px;">Pourquoi nous confier votre déménagement</p>
-        <p style="font-weight: 900; font-stretch: 125%; font-size: min(var(--chiffre),10.4vw); line-height: 1.16; letter-spacing: -0.03em; margin: 12px 0px 0px;">Une <span style="color: var(--jaune); background: var(--violet); padding: 0px 0.2em 0.04em; border-radius: 0.22em;">dizaine</span> d'années</p>
-        <p style="margin: 18px 0px 0px; font-size: 20px; font-weight: 600; max-width: 26ch;">de métier dans le déménagement, à Bruxelles et en dehors.</p>
+
+    <section id="vehicules" style="padding: var(--section-y) var(--interieur);"><div style="max-width: 1200px; margin: 0px auto;">
+      <p style="display: inline-flex; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--jaune); margin: 0px 0px 18px;">Nos véhicules</p>
+      <h2 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; letter-spacing: -0.015em; margin: 0px; font-size: var(--h2); text-wrap: balance;">Le camion et le lift, chez vous</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 48px var(--gouttiere); margin-top: 40px; align-items: stretch;">
+        <article data-vehicule="camion" style="display: flex; flex-direction: column; gap: 14px;">
+          <figure data-image="camion" style="position: relative; margin: 0px 0px 18px 12px; border-radius: 14px; overflow: hidden; border: 2px solid var(--violet); box-shadow: -12px 12px 0 var(--jaune); background: #fff; aspect-ratio: 3 / 2;"><img src="assets/photos/demenago-camion-sans-decor-1200.jpg" srcset="assets-reduits/photos/demenago-camion-sans-decor-720.jpg 720w, assets/photos/demenago-camion-sans-decor-1200.jpg 1200w" sizes="(max-width: 760px) calc(100vw - 52px), (max-width: 1100px) 50vw, 380px" width="1200" height="800" alt="Le camion DéménaGo, son logo et le numéro 0485 15 27 02 sur la caisse" style="display: block; width: 100%; height: 100%; object-fit: cover;" decoding="async"></figure>
+          <h3 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: var(--h3-service);">Le camion</h3>
+          <p style="margin: 0px; font-size: 18px; color: var(--gris-texte); max-width: 44ch;">Location, transport, déménagement : sur demande. Plusieurs dimensions, dont le camion de 20&nbsp;m³ de nos formules.</p>
+          <a href="demenagement.html#camion" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none; min-height: 44px;" class="nv-lien">Le déménagement <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+        </article>
+        <article data-vehicule="lift-camion" style="display: flex; flex-direction: column; gap: 14px;">
+          <figure data-image="lift-camion" style="position: relative; margin: 0px 0px 18px 12px; border-radius: 14px; overflow: hidden; border: 2px solid var(--violet); box-shadow: -12px 12px 0 var(--jaune); background: #fff; aspect-ratio: 3 / 2;"><img src="assets/photos/demenago-lift-camion-sans-decor-1200.jpg" srcset="assets-reduits/photos/demenago-lift-camion-sans-decor-720.jpg 720w, assets/photos/demenago-lift-camion-sans-decor-1200.jpg 1200w" sizes="(max-width: 760px) calc(100vw - 52px), (max-width: 1100px) 50vw, 380px" width="1200" height="800" alt="Le lift sur camion DéménaGo, mât replié au-dessus de la cabine, le logo sur la portière et le numéro 0485 15 27 02 le long du mât" style="display: block; width: 100%; height: 100%; object-fit: cover;" decoding="async"></figure>
+          <h3 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: var(--h3-service);">Le lift</h3>
+          <p style="margin: 0px; font-size: 18px; color: var(--gris-texte); max-width: 44ch;">Monté sur camion, il monte jusqu'au 24e étage et fait passer les meubles par la fenêtre. Toujours avec son opérateur.</p>
+          <a href="location-lift.html" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none; min-height: 44px;" class="nv-lien">La location de lift <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+        </article>
+        <article data-vehicule="lift-tractable" style="display: flex; flex-direction: column; gap: 14px;">
+          <figure data-image="lift-tractable" style="position: relative; margin: 0px 0px 18px 12px; border-radius: 14px; overflow: hidden; border: 2px solid var(--violet); box-shadow: -12px 12px 0 var(--jaune); background: #fff; aspect-ratio: 3 / 2;"><img src="assets/photos/demenago-lift-tractable-sans-decor-1200.jpg" srcset="assets-reduits/photos/demenago-lift-tractable-sans-decor-720.jpg 720w, assets/photos/demenago-lift-tractable-sans-decor-1200.jpg 1200w" sizes="(max-width: 760px) calc(100vw - 52px), (max-width: 1100px) 50vw, 380px" width="1200" height="800" alt="Le lift tractable DéménaGo, replié, le numéro 0485 15 27 02 écrit le long du mât" style="display: block; width: 100%; height: 100%; object-fit: cover;" decoding="async"></figure>
+          <h3 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: var(--h3-service);">Le lift tractable</h3>
+          <p style="margin: 0px; font-size: 18px; color: var(--gris-texte); max-width: 44ch;">Monté sur une remorque, il s'installe là où le grand lift ne passe pas : une cour, une rue étroite. Toujours avec son opérateur.</p>
+          <a href="location-lift.html#lift-tractable" style="margin-top: auto; display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none; min-height: 44px;" class="nv-lien">Le lift tractable <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+        </article>
       </div>
-      <ul style="list-style: none; margin: 0px; padding: 0px; display: grid; gap: 14px;">
-        <li style="display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; border: 2px solid var(--gris-ligne); border-radius: 14px; padding: 20px 22px;"><span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-weight: 800;">1</span><span><b style="display: block;">Des prix affichés</b><span style="color: var(--gris-texte); font-size: 16px;">70 € de l'heure pour le déménagement, 60 € pour le lift. Vous savez où vous allez avant le devis.</span></span></li>
-        <li style="display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; border: 2px solid var(--gris-ligne); border-radius: 14px; padding: 20px 22px;"><span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-weight: 800;">2</span><span><b style="display: block;">Le camion et le lift, une seule équipe</b><span style="color: var(--gris-texte); font-size: 16px;">Un seul interlocuteur pour tout le déménagement, du premier carton au dernier meuble.</span></span></li>
-        <li style="display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; border: 2px solid var(--gris-ligne); border-radius: 14px; padding: 20px 22px;"><span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-weight: 800;">3</span><span><b style="display: block;">Bruxelles, on connaît</b><span style="color: var(--gris-texte); font-size: 16px;">Les 19 communes, leurs rues étroites et leurs étages sans ascenseur.</span></span></li>
-      </ul>
     </div></section>
 
     <section style="padding: var(--section-y) var(--interieur);"><div style="max-width: 1200px; margin: 0px auto;">
@@ -491,14 +550,38 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       </ul>
     </div></section>
 
+    <section id="international" style="padding: 0 var(--interieur) var(--section-y);"><div style="max-width: 1200px; margin: 0px auto;">
+      <div style="border: 2px solid var(--violet); border-radius: 28px; box-shadow: -14px 14px 0 var(--jaune); padding: clamp(20px,5vw,48px); display: flex; flex-wrap: wrap; gap: 28px 48px; align-items: center; justify-content: space-between;">
+        <div style="flex: 1 1 420px; max-width: 680px;">
+          <p style="display: inline-flex; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--jaune); margin: 0px 0px 18px;">International</p>
+          <h2 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; letter-spacing: -0.015em; margin: 0px; font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem); text-wrap: balance;">Et jusqu'à l'étranger</h2>
+          <p style="margin: 14px 0px 0px; color: var(--gris-texte); font-size: 18px; text-wrap: pretty;">Nous déménageons aussi hors de Belgique, par exemple vers Bordeaux ou Madrid. Pour ces trajets, le prix se fait sur devis.</p>
+        </div>
+        <a href="international.html" class="scp0" style="display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0px 28px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 18px; text-decoration: none;">Déménager à l'étranger <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+      </div>
+    </div></section>
+
     <section style="padding: 0 var(--interieur) var(--section-y);"><div style="max-width: 1200px; margin: 0px auto;">
       <p style="display: inline-flex; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--jaune); margin: 0px 0px 18px;">Comment ça se passe</p>
       <h2 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; letter-spacing: -0.015em; margin: 0px; font-size: var(--h2);">Trois étapes, pas plus</h2>
       <ol style="list-style: none; margin: 40px 0px 0px; padding: 0px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: var(--gouttiere);">
         <li style="border: 2px solid var(--gris-ligne); border-radius: 28px; padding: 30px 28px 32px;" class="nv-sub nv-sub3"><span style="display: grid; place-items: center; width: 56px; height: 56px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-weight: 800; font-stretch: 118%; font-size: 24px; margin-bottom: 26px;">1</span><h3 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: 1.55rem;">Vous décrivez votre déménagement</h3><p style="margin: 12px 0px 0px; color: var(--gris-texte);">Par le formulaire ou par téléphone : la date, les deux adresses, les étages, et s'il faut un lift.</p></li>
-        <li style="border: 2px solid var(--gris-ligne); border-radius: 28px; padding: 30px 28px 32px;" class="nv-sub nv-sub3"><span style="display: grid; place-items: center; width: 56px; height: 56px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-weight: 800; font-stretch: 118%; font-size: 24px; margin-bottom: 26px;">2</span><h3 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: 1.55rem;">Vous recevez le devis</h3><p style="margin: 12px 0px 0px; color: var(--gris-texte);">Par mail ou par téléphone, dans un délai de <span style="display: inline-block; padding: 0.05em 0.5em; border: 1.5px dashed; border-radius: 6px; font-weight: 600;">[à fournir]</span>.</p></li>
+        <li style="border: 2px solid var(--gris-ligne); border-radius: 28px; padding: 30px 28px 32px;" class="nv-sub nv-sub3"><span style="display: grid; place-items: center; width: 56px; height: 56px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-weight: 800; font-stretch: 118%; font-size: 24px; margin-bottom: 26px;">2</span><h3 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: 1.55rem;">Vous recevez le devis</h3><p style="margin: 12px 0px 0px; color: var(--gris-texte);">Par mail ou par téléphone, dans un délai de 24&nbsp;heures.</p></li>
         <li style="border: 2px solid var(--gris-ligne); border-radius: 28px; padding: 30px 28px 32px;" class="nv-sub nv-sub3"><span style="display: grid; place-items: center; width: 56px; height: 56px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-weight: 800; font-stretch: 118%; font-size: 24px; margin-bottom: 26px;">3</span><h3 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: 1.55rem;">Le jour J</h3><p style="margin: 12px 0px 0px; color: var(--gris-texte);">Nous arrivons à l'heure convenue, avec le lift s'il en faut un.</p></li>
       </ol>
+    </div></section>
+
+    <section style="padding: 0 var(--interieur) var(--section-y);"><div style="max-width: 1200px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 56px; align-items: start;">
+      <div>
+        <p style="display: inline-flex; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--jaune); margin: 0px 0px 18px;">Pourquoi nous confier votre déménagement</p>
+        <p style="font-weight: 900; font-stretch: 125%; font-size: min(var(--chiffre),10.4vw); line-height: 1.16; letter-spacing: -0.03em; margin: 12px 0px 0px;">Une <span style="color: var(--jaune); background: var(--violet); padding: 0px 0.2em 0.04em; border-radius: 0.22em;">dizaine</span> d'années</p>
+        <p style="margin: 18px 0px 0px; font-size: 20px; font-weight: 600; max-width: 26ch;">de métier dans le déménagement, à Bruxelles et en dehors.</p>
+      </div>
+      <ul style="list-style: none; margin: 0px; padding: 0px; display: grid; gap: 14px;">
+        <li style="display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; border: 2px solid var(--gris-ligne); border-radius: 14px; padding: 20px 22px;"><span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-weight: 800;">1</span><span><b style="display: block;">Des formules claires</b><span style="color: var(--gris-texte); font-size: 16px;">Trois formules tout compris : vous savez ce qui est fait avant le jour J.</span></span></li>
+        <li style="display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; border: 2px solid var(--gris-ligne); border-radius: 14px; padding: 20px 22px;"><span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-weight: 800;">2</span><span><b style="display: block;">Le camion et le lift, une seule équipe</b><span style="color: var(--gris-texte); font-size: 16px;">Un seul interlocuteur pour tout le déménagement, du premier carton au dernier meuble.</span></span></li>
+        <li style="display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; border: 2px solid var(--gris-ligne); border-radius: 14px; padding: 20px 22px;"><span style="display: grid; place-items: center; width: 36px; height: 36px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-weight: 800;">3</span><span><b style="display: block;">Bruxelles, on connaît</b><span style="color: var(--gris-texte); font-size: 16px;">Les 19 communes, leurs rues étroites et leurs étages sans ascenseur.</span></span></li>
+      </ul>
     </div></section>
 
     <section style="padding: 0 var(--interieur) var(--section-y);"><div style="max-width: 880px; margin: 0px auto;">
@@ -508,12 +591,17 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
         
           <details style="border: 2px solid var(--gris-ligne); border-radius: 16px; padding: 0px 22px;">
             <summary style="list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; font-weight: 700; font-size: 18px;">Combien coûte un déménagement à Bruxelles ?<span aria-hidden="true" style="display: grid; place-items: center; flex: 0 0 auto; width: 32px; height: 32px; border-radius: 999px; background: var(--jaune); font-weight: 800;" class="nv-faq-plus">+</span></summary>
-            <p style="margin: 0px 0px 20px; color: var(--gris-texte); text-wrap: pretty;">70&nbsp;€ de l'heure avec le camion, minimum 2 heures. Le lift, si besoin, coûte 60&nbsp;€ de l'heure jusqu'au 4e étage. Utilisez l'estimation ci-dessus pour un ordre de prix, puis demandez le devis.</p>
+            <p style="margin: 0px 0px 20px; color: var(--gris-texte); text-wrap: pretty;">Trois formules tout compris, de la plus simple à la plus complète, sont présentées <a href="#formules" style="color: var(--violet); font-weight: 700;">plus haut</a>, avec leurs prix. Pour un déménagement sur mesure, demandez le devis : il est gratuit.</p>
           </details>
         
           <details style="border: 2px solid var(--gris-ligne); border-radius: 16px; padding: 0px 22px;">
             <summary style="list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; font-weight: 700; font-size: 18px;">Dans quelles communes intervenez-vous ?<span aria-hidden="true" style="display: grid; place-items: center; flex: 0 0 auto; width: 32px; height: 32px; border-radius: 999px; background: var(--jaune); font-weight: 800;" class="nv-faq-plus">+</span></summary>
             <p style="margin: 0px 0px 20px; color: var(--gris-texte); text-wrap: pretty;">Dans les 19 communes de la Région de Bruxelles-Capitale, et aussi en dehors de Bruxelles.</p>
+          </details>
+
+          <details style="border: 2px solid var(--gris-ligne); border-radius: 16px; padding: 0px 22px;">
+            <summary style="list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; font-weight: 700; font-size: 18px;">Déménagez-vous à l'étranger&nbsp;?<span aria-hidden="true" style="display: grid; place-items: center; flex: 0 0 auto; width: 32px; height: 32px; border-radius: 999px; background: var(--jaune); font-weight: 800;" class="nv-faq-plus">+</span></summary>
+            <p style="margin: 0px 0px 20px; color: var(--gris-texte); text-wrap: pretty;">Oui, sur devis, par exemple vers la France ou l'Espagne. Appelez-nous au 0485 15 27 02 pour en parler.</p>
           </details>
         
           <details style="border: 2px solid var(--gris-ligne); border-radius: 16px; padding: 0px 22px;">
@@ -528,7 +616,7 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
         
           <details style="border: 2px solid var(--gris-ligne); border-radius: 16px; padding: 0px 22px;">
             <summary style="list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 64px; font-weight: 700; font-size: 18px;">Combien de temps pour recevoir le devis ?<span aria-hidden="true" style="display: grid; place-items: center; flex: 0 0 auto; width: 32px; height: 32px; border-radius: 999px; background: var(--jaune); font-weight: 800;" class="nv-faq-plus">+</span></summary>
-            <p style="margin: 0px 0px 20px; color: var(--gris-texte); text-wrap: pretty;">Nous vous recontactons par téléphone ou par mail sous un délai à fournir. Pour aller plus vite : 0485 15 27 02.</p>
+            <p style="margin: 0px 0px 20px; color: var(--gris-texte); text-wrap: pretty;">Nous vous recontactons par téléphone ou par mail dans un délai de 24&nbsp;heures. Pour aller plus vite : 0485 15 27 02.</p>
           </details>
         
       </div>
@@ -538,8 +626,8 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       <span style="position: absolute; top: -2px; left: clamp(24px, 3vw, 40px); width: 72px; height: 8px; background: var(--jaune); border-radius: 0px 0px 8px 8px;"></span>
       <div><h2 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; margin: 0px; font-size: clamp(1.8rem, 1.2rem + 2vw, 2.8rem); text-wrap: balance;">Votre déménagement commence ici</h2><p style="margin: 10px 0px 0px; color: var(--gris-texte); font-size: 18px;">Devis par mail ou par téléphone. Particuliers et professionnels.</p></div>
       <div style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <a href="devis.html" class="scp0" style="display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0px 28px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 18px; text-decoration: none;">Demander un devis</a>
-        <a href="tel:+32485152702" class="scp1" style="display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0px 28px; border-radius: 999px; border: 2px solid var(--violet); background: var(--jaune); color: var(--violet); font-weight: 700; font-size: 18px; text-decoration: none;">0485 15 27 02</a>
+        <a href="devis.html" class="scp0" style="display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0px 28px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 18px; text-decoration: none;">Demander un devis <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+        <a href="tel:+32485152702" class="scp1" style="display: inline-flex; align-items: center; gap: 10px; min-height: 60px; padding: 0px 28px; border-radius: 999px; border: 2px solid var(--violet); background: var(--jaune); color: var(--violet); font-weight: 700; font-size: 18px; text-decoration: none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> 0485 15 27 02</a>
       </div>
     </div></section>
   </main><footer style="background: #fff; border-top: 6px solid var(--jaune); margin-top: var(--section-y); padding: 56px var(--interieur) 40px;" class="nv-pied">
@@ -551,7 +639,7 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
     <div>
       <h2 style="display: inline-block; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0px 0px 16px; padding-bottom: 6px; border-bottom: 3px solid var(--jaune);">Services</h2>
       <ul style="list-style: none; margin: 0px; padding: 0px; display: grid; gap: 10px; font-size: 16px;">
-        <li><a href="demenagement.html" class="nv-pied-lien">Déménagement</a></li><li><a href="location-lift.html" class="nv-pied-lien">Location de lift</a></li><li><a href="tarifs.html" class="nv-pied-lien">Tarifs</a></li><li><a href="devis.html" class="nv-pied-lien">Demander un devis</a></li>
+        <li><a href="demenagement.html" class="nv-pied-lien">Déménagement</a></li><li><a href="location-lift.html" class="nv-pied-lien">Location de lift</a></li><li><a href="international.html" class="nv-pied-lien">Déménagement international</a></li><li><a href="tarifs.html" class="nv-pied-lien">Tarifs</a></li><li><a href="devis.html" class="nv-pied-lien">Demander un devis</a></li>
       </ul>
     </div>
     <div>
@@ -565,15 +653,15 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       <h2 style="display: inline-block; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0px 0px 16px; padding-bottom: 6px; border-bottom: 3px solid var(--jaune);">Contact</h2>
       <ul style="list-style: none; margin: 0px; padding: 0px; display: grid; gap: 10px; font-size: 16px;">
         <li><a href="tel:+32485152702" style="font-weight: 700;" class="nv-pied-lien">0485 15 27 02</a></li>
-        <li>Mail <span style="display: inline-block; padding: 0.05em 0.5em; border: 1.5px dashed; border-radius: 6px; font-weight: 600;">[à fournir]</span></li>
-        <li>Horaires <span style="display: inline-block; padding: 0.05em 0.5em; border: 1.5px dashed; border-radius: 6px; font-weight: 600;">[à fournir]</span></li>
+        <li><a href="mailto:contact@demenago.be" class="nv-pied-lien">contact@demenago.be</a></li>
+        <li>Horaires : de 6 h à 22 h</li>
         <li style="color: var(--gris-texte); font-size: 14px;">TVA BE 0798.222.995</li>
       </ul>
     </div>
   </div>
   <div style="max-width: 1200px; margin: 48px auto 0px; padding-top: 24px; border-top: 1px solid var(--gris-ligne); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; font-size: 14px; color: var(--gris-texte);">
     <span>© 2026 DéménaGo</span>
-    <nav aria-label="Informations" style="display: flex; gap: 20px; flex-wrap: wrap;"><a href="plan-du-site.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Plan du site</a><a href="index.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Mentions légales</a><a href="index.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Confidentialité</a></nav>
+    <nav aria-label="Informations" style="display: flex; gap: 20px; flex-wrap: wrap;"><a href="plan-du-site.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Plan du site</a><a href="mentions-legales.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Mentions légales</a><a href="confidentialite.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Confidentialité</a><a href="conditions-generales.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Conditions générales</a></nav>
   </div></footer><div class="nv-lift" aria-hidden="true"><span class="nv-lift__bras"></span><span class="nv-lift__sol"></span><span class="nv-lift__chariot"><span class="nv-lift__nacelle"><svg class="nv-lift__plateau" viewBox="0 0 32 26" focusable="false"><rect class="a" x="22" y="3" width="10" height="23" rx="2"></rect><circle class="j" cx="27" cy="9" r="2"></circle><rect class="a" x="0" y="22" width="32" height="4" rx="1.2"></rect><rect class="a" x="0" y="15" width="2.5" height="8" rx="1"></rect></svg><svg class="nv-lift__charge" viewBox="0 0 18 16" focusable="false"><rect class="j t" x=".8" y=".8" width="16.4" height="14.4" rx="1.4"></rect><path class="t" d="M.8 5.2H17.2"></path><rect class="a" x="7.6" y=".8" width="2.8" height="4.4"></rect></svg></span></span></div><nav class="nv-barre" aria-label="Contact rapide" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; grid-template-columns: 1fr 1.35fr; gap: 10px; padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: #fff; border-top: 2px solid var(--violet); box-shadow: var(--ombre-barre);"><a href="tel:+32485152702" style="display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 56px; border-radius: 999px; border: 2px solid var(--violet); background: var(--jaune); color: var(--violet); font-weight: 700; font-size: 16px; text-decoration: none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>Appeler</a><a href="devis.html" style="display: flex; align-items: center; justify-content: center; min-height: 56px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 16px; text-decoration: none;">Demander un devis</a></nav></div>
 <script>
 
@@ -585,7 +673,7 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
 
   
   const CLE = 'nv-demenageur-v1';
-  let mem = { est: { service: 'both', heures: 3, etage: 5, weekend: false }, service: '' };
+  let mem = { est: { service: 'both', heures: 3, etage: 4 }, service: '' };   
   try { const m = JSON.parse(sessionStorage.getItem(CLE) || 'null'); if (m && m.est) mem = m; } catch (e) {  }
   const sauver = () => { try { sessionStorage.setItem(CLE, JSON.stringify(mem)); } catch (e) {  } };
 
@@ -593,17 +681,25 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
   try {
     const q = new URLSearchParams(location.search), est = q.get('est');
     if (est) {
-      const [sv, h, e, w] = est.split(',');
-      if (['dem', 'lift', 'both'].includes(sv)) {
-        mem.est = { service: sv, heures: Math.min(12, Math.max(1, parseInt(h, 10) || 3)), etage: Math.min(8, Math.max(1, parseInt(e, 10) || 5)), weekend: w === '1' };
+      const [sv, h, e] = est.split(',');
+      if (['dem', 'lift', 'tractable', 'both', 'inter'].includes(sv)) {
+        mem.est = { service: sv, heures: Math.min(12, Math.max(1, parseInt(h, 10) || 3)), etage: (parseInt(e, 10) || 4) > 4 ? 24 : 4 };
         if (q.has('choix')) mem.service = sv;
         sauver();
       }
     }
   } catch (e) {  }
+  
+  const FORMULES = {
+    confort: { nom: 'Confort', prix: 380, heures: 3, sup: 150, equipe: '2 déménageurs' },
+    premium: { nom: 'Premium', prix: 520, heures: 3, sup: 170, equipe: '4 déménageurs' },
+    'no-stress': { nom: 'No Stress', prix: 850, heures: 5, sup: 170, equipe: '4 déménageurs' },
+  };
+  let formule = null;
+  try { formule = FORMULES[new URLSearchParams(location.search).get('formule')] || null; } catch (e) {  }
   function lierDevis() {
-    const e = mem.est, param = 'est=' + [e.service, e.heures, e.etage, e.weekend ? 1 : 0].join(',');
-    $$('a[href^="devis.html"]').forEach(a => a.setAttribute('href', 'devis.html?' + param + (a.hasAttribute('data-est-vers-devis') ? '&choix=1' : '')));
+    const e = mem.est, param = 'est=' + [e.service, e.heures, e.etage].join(',');
+    $$('a[href^="devis.html"]:not([data-formule]):not([data-devis-fixe])').forEach(a => a.setAttribute('href', 'devis.html?' + param + (a.hasAttribute('data-est-vers-devis') ? '&choix=1' : '')));
   }
 
   
@@ -616,35 +712,36 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
 
   
   const eur = n => n.toLocaleString('fr-BE') + ' €';
-  function estimer(e) {
-    const h = e.heures, lignes = [];
-    let total = 0;
-    if (e.service !== 'lift') { const hd = Math.max(2, h); total += hd * 70; lignes.push(hd + ' h × 70 € (déménagement)'); }
-    if (e.service !== 'dem') {
-      const extra = Math.max(0, e.etage - 4) * 10, we = e.weekend ? 10 : 0, taux = 60 + extra + we;
-      total += taux * h;
-      lignes.push(h + ' h × ' + taux + ' € (lift' + (extra ? ', +' + extra + ' € étages' : '') + (we ? ', +10 € week-end' : '') + ')');
+  const TAUX = { Particulier: { camion: 70, lift: 60, tractable: 120 }, Professionnel: { camion: 80, lift: 70, tractable: 150 } };
+  function estimer(e, client) {
+    const t = TAUX[client] || TAUX.Particulier, h = e.heures, lignes = [];
+    let total = 0, surDevis = false;
+    if (e.service === 'inter') return { total: 'Sur devis', calcul: 'Pour l\'étranger, le prix se fait sur devis.' };   
+    if (e.service === 'dem' || e.service === 'both') { const hd = Math.max(2, h); total += hd * t.camion; lignes.push(hd + ' h × ' + t.camion + '\u00a0€ (déménagement)'); }
+    if (e.service === 'lift' || e.service === 'both' || e.service === 'tractable') {
+      const nom = e.service === 'tractable' ? 'lift tractable' : 'lift', taux = e.service === 'tractable' ? t.tractable : t.lift;
+      if (e.etage > 4) { surDevis = true; lignes.push(nom + ' au-delà du 4e étage : sur devis'); }
+      else { total += taux * h; lignes.push(h + ' h × ' + taux + '\u00a0€ (' + nom + ')'); }
     }
-    return { total: eur(total), calcul: lignes.join(' + ') };
+    return { total: surDevis && !total ? 'Sur devis' : eur(total), calcul: lignes.join(' + ') };
   }
   function rendreEst() {
-    const e = mem.est, r = estimer(e);
+    const e = mem.est, fo = form && d.formule;
+    const r = fo ? { total: eur(fo.prix), calcul: 'Formule ' + fo.nom + ' : ' + fo.heures + '\u00a0h comprises, ' + fo.equipe + '. Heure supplémentaire : ' + eur(fo.sup) + '.' } : estimer(e, form ? d.client : 'Particulier');
     $$('[data-est-svc]').forEach(b => peindre(b, b.dataset.estSvc === e.service));
     $$('[data-est-etage]').forEach(b => peindre(b, Number(b.dataset.estEtage) === e.etage));
-    $$('[data-est-jour]').forEach(b => peindre(b, (b.dataset.estJour === '1') === e.weekend));
     const f = $('[data-est-etages]'); if (f) f.hidden = e.service === 'dem';
     $$('[data-est-heures]').forEach(x => { x.textContent = e.heures + ' h'; });
     $$('[data-est-total]').forEach(x => { x.textContent = r.total; });
-    $$('[data-est-calcul]').forEach(x => { x.textContent = x.dataset.estCalcul === 'devis' ? r.calcul + '. Indicatif, le devis fait foi.' : r.calcul; });
+    $$('[data-est-calcul]').forEach(x => { x.textContent = x.dataset.estCalcul === 'devis' && !fo && e.service !== 'inter' ? r.calcul + '. Indicatif, le devis fait foi.' : r.calcul; });
   }
   function majEst(p) { mem.est = Object.assign({}, mem.est, p); sauver(); lierDevis(); rendreEst(); }
 
   document.addEventListener('click', ev => {
-    const b = ev.target.closest('[data-est-svc],[data-est-etage],[data-est-jour],[data-est-moins],[data-est-plus],[data-est-vers-devis]');
+    const b = ev.target.closest('[data-est-svc],[data-est-etage],[data-est-moins],[data-est-plus],[data-est-vers-devis]');
     if (!b) return;
     if (b.hasAttribute('data-est-svc')) majEst({ service: b.dataset.estSvc });
     else if (b.hasAttribute('data-est-etage')) majEst({ etage: Number(b.dataset.estEtage) });
-    else if (b.hasAttribute('data-est-jour')) majEst({ weekend: b.dataset.estJour === '1' });
     else if (b.hasAttribute('data-est-moins')) majEst({ heures: Math.max(1, mem.est.heures - 1) });
     else if (b.hasAttribute('data-est-plus')) majEst({ heures: Math.min(12, mem.est.heures + 1) });
     else if (b.hasAttribute('data-est-vers-devis')) { mem.service = mem.est.service; sauver(); } 
@@ -652,11 +749,11 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
 
   
   const form = $('[data-devis]');
-  const ETAGES = ['Rez', '1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e ou plus'];
+  const ETAGES = ['Rez', '1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e', '9e à 24e'];   
   const NOMS = ['Service', 'Adresses', 'Date et volume', 'Coordonnées'];
-  const SERVICES = { dem: 'Déménagement', lift: 'Location de lift', both: 'Les deux' };
+  const SERVICES = { dem: 'Déménagement', lift: 'Location de lift', tractable: 'Lift tractable', both: 'Les deux', inter: 'Déménagement international' };
   const d = {
-    etape: 1, envoye: false, erreur: false, service: mem.service || '', client: 'Particulier',
+    etape: formule ? 2 : 1, envoye: false, erreur: false, service: formule ? 'dem' : (mem.service || ''), client: 'Particulier', formule: formule,
     depart: { commune: '', etage: 'Rez', asc: '' }, arrivee: { commune: '', etage: 'Rez', asc: '' },
     date: '', volume: 'Je ne sais pas', message: '', prenom: '', tel: '', mail: '',
   };
@@ -668,10 +765,23 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
     const svc = d.service || (hautSansAsc() ? 'both' : '');
     $$('[data-devis-svc]').forEach(b => peindre(b, d.service === b.dataset.devisSvc));
     $$('[data-devis-client]').forEach(b => peindre(b, d.client === b.dataset.devisClient));
+    $$('[data-prix]').forEach(x => { x.textContent = (TAUX[d.client] || TAUX.Particulier)[x.dataset.prix] + '\u00a0€/h'; });   
     $$('[data-etape]').forEach(p => { p.hidden = Number(p.dataset.etape) !== d.etape; });
     $('[data-envoye]').hidden = !d.envoye;
     $('[data-encours]').hidden = d.envoye;
-    $('[data-etape-texte]').textContent = 'Étape ' + d.etape + ' sur 4 · ' + NOMS[d.etape - 1];
+    const noms = d.formule ? ['Formule'].concat(NOMS.slice(1)) : NOMS;   
+    $('[data-etape-texte]').textContent = 'Étape ' + d.etape + ' sur 4 · ' + noms[d.etape - 1];
+    const pas1 = $('[data-pas] .nv-pas-nom'); if (pas1) pas1.textContent = noms[0];
+    const fc = $('[data-formule-choisie]');
+    if (fc) {
+      fc.hidden = !d.formule;
+      if (d.formule) {
+        $('[data-formule-nom]', fc).textContent = d.formule.nom;
+        $('[data-formule-prix]', fc).textContent = eur(d.formule.prix);
+        $('[data-formule-detail]', fc).textContent = d.formule.heures + '\u00a0h comprises, ' + d.formule.equipe + ', lift et camion de 20\u00a0m³';
+      }
+    }
+    const note = $('[data-prix-note]'); if (note) note.textContent = d.formule ? d.formule.heures + '\u00a0h comprises' : d.service === 'inter' ? '' : 'indicatif, le devis fait foi';
     $('[data-pct]').textContent = (d.etape * 25) + ' %';
     $('[data-barre]').style.clipPath = 'inset(0 ' + (100 - d.etape * 25) + '% 0 0 round 999px)';   
     $$('[data-pas]').forEach((li, i) => {
@@ -679,9 +789,9 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       li.style.color = on ? 'var(--violet)' : 'var(--gris-texte)';
       li.firstElementChild.style.background = on ? 'var(--jaune)' : '#fff';
     });
-    $('[data-retour]').hidden = d.etape === 1;
+    $('[data-retour]').hidden = d.etape === (d.formule ? 2 : 1);   
     $('[data-cta]').textContent = d.etape === 4 ? 'Envoyer ma demande' : 'Continuer';
-    $('[data-conseil]').hidden = !(hautSansAsc() && d.service === 'dem');
+    $('[data-conseil]').hidden = !(hautSansAsc() && d.service === 'dem' && !d.formule);   
     $('[data-erreur]').hidden = !d.erreur;
     const tel = $('[data-tel]');
     tel.style.borderColor = d.erreur ? 'var(--violet)' : 'var(--gris-trait)';
@@ -689,13 +799,14 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
     if (d.erreur) { tel.setAttribute('aria-invalid', 'true'); tel.setAttribute('aria-describedby', 'nv-erreur-tel'); }
     else { tel.removeAttribute('aria-invalid'); tel.removeAttribute('aria-describedby'); }
     const recap = {
-      Service: SERVICES[svc] || '…',
+      Service: d.formule ? 'Formule ' + d.formule.nom : (SERVICES[svc] || '…'),
       Client: d.client,
       Trajet: (d.depart.commune || '…') + ' → ' + (d.arrivee.commune || '…'),
       Date: d.date ? new Date(d.date).toLocaleDateString('fr-BE') : '…',
       Volume: d.volume,
     };
     $$('[data-recap]').forEach(x => { x.textContent = recap[x.dataset.recap]; });
+    const lc = $('[data-recap="Client"]'); if (lc) lc.parentElement.hidden = !!d.formule;   
     $$('[data-prenom]').forEach(x => { x.textContent = d.prenom ? ' ' + d.prenom : ''; });
     $$('[data-tel-merci]').forEach(x => { x.textContent = d.tel; });
     rendreEst();
@@ -712,7 +823,7 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
     const invalide = $$(':invalid', panneau)[0];
     if (invalide) { invalide.reportValidity(); return; }
     if (d.etape === 1 && !d.service) choisirService('dem');
-    if (d.etape === 2 && hautSansAsc() && d.service === 'dem') choisirService('both');
+    if (d.etape === 2 && hautSansAsc() && d.service === 'dem' && !d.formule) choisirService('both');
     if (d.etape === 4) {
       if (!d.tel.trim()) { d.erreur = true; rendreDevis(); $('[data-tel]').focus(); return; }   
       racine.classList.add('nv-anime'); d.envoye = true; rendreDevis();
@@ -733,7 +844,11 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       const c = ev.target.closest('[data-f]');
       if (!c) return;
       const lieu = c.closest('[data-lieu]');
-      if (lieu) d[lieu.dataset.lieu][c.dataset.f] = c.value;
+      if (lieu) {
+        d[lieu.dataset.lieu][c.dataset.f] = c.value;
+        
+        if (c.dataset.f === 'etage') { mem.est = Object.assign({}, mem.est, { etage: [d.depart, d.arrivee].some(l => ETAGES.indexOf(l.etage) >= 5) ? 24 : 4 }); sauver(); lierDevis(); }
+      }
       else { d[c.dataset.f] = c.value; d.erreur = false; }
       rendreDevis();
     };
@@ -745,8 +860,8 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       if (b.hasAttribute('data-cta-bouton')) { avancer(); return; }
       if (b.hasAttribute('data-devis-svc')) choisirService(b.dataset.devisSvc);
       else if (b.hasAttribute('data-devis-client')) d.client = b.dataset.devisClient;
-      else if (b.hasAttribute('data-retour')) { racine.classList.add('nv-anime'); d.etape = Math.max(1, d.etape - 1); }
-      else if (b.hasAttribute('data-recommencer')) { racine.classList.add('nv-anime'); d.etape = 1; d.envoye = false; }
+      else if (b.hasAttribute('data-retour')) { racine.classList.add('nv-anime'); d.etape = Math.max(d.formule ? 2 : 1, d.etape - 1); }
+      else if (b.hasAttribute('data-recommencer')) { racine.classList.add('nv-anime'); d.etape = 1; d.envoye = false; d.formule = null; d.service = mem.service || ''; }
       rendreDevis();
       if (b.hasAttribute('data-retour') || b.hasAttribute('data-recommencer')) focusTitre();
     });

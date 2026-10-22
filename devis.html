@@ -7,6 +7,8 @@
 <title>Devis déménagement et lift à Bruxelles | DéménaGo</title>
 <meta name="description" content="Demandez votre devis de déménagement ou de location de lift à Bruxelles en 4 étapes, avec une estimation immédiate.">
 <meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" sizes="32x32" href="assets-reduits/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets-reduits/favicon-180.png">
 <style>
 
 @font-face {
@@ -240,6 +242,9 @@ a.scp0:active, a.scp1:active, button:active, .nv-barre a:active { transform: sca
 .nv-lien svg { transition: transform 200ms var(--ease-out); }
 @media (hover: hover) and (pointer: fine) { .nv-lien:hover svg { transform: translateX(4px); } }
 @media (prefers-reduced-motion: reduce) { .nv-lien svg { transition: none; } .nv-lien:hover svg { transform: none; } }
+.scp0 > svg:last-child { transition: transform 200ms var(--ease-out); }   
+@media (hover: hover) and (pointer: fine) { .scp0:hover > svg:last-child { transform: translateX(4px); } }
+@media (prefers-reduced-motion: reduce) { .scp0 > svg:last-child { transition: none; } .scp0:hover > svg:last-child { transform: none; } }
 
 
 .nv-faq-plus { transition: transform 200ms var(--ease-out); }
@@ -286,6 +291,70 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
 @media (min-width: 960px) and (max-width: 1099.98px) {
   .nv-tel-numero { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 }
+
+
+
+
+.nv-est { grid-template-areas: "tete" "reglages" "resultat"; row-gap: 32px !important; }
+.nv-est-tete { grid-area: tete; }
+.nv-est-reglages { grid-area: reglages; }
+.nv-est-resultat { grid-area: resultat; }
+@media (min-width: 960px) {
+  .nv-est { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; grid-template-areas: "tete reglages" "resultat reglages"; column-gap: 56px; align-content: start; }
+}
+
+
+.nv-formules { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 32px var(--gouttiere); margin-top: 40px; align-items: stretch; }
+.nv-formule { position: relative; display: flex; flex-direction: column; gap: 14px; border: 2px solid var(--gris-ligne); border-radius: var(--rayon); padding: clamp(24px, 3vw, 36px); background: #fff; }
+.nv-formule--phare { border-color: var(--violet); box-shadow: 0 0 0 1px var(--violet), var(--ombre-formulaire); }   
+.nv-formule__phare { position: absolute; top: -15px; left: clamp(24px, 3vw, 36px); padding: 4px 12px; border-radius: 999px; background: var(--jaune); border: 2px solid var(--violet); font-size: 14px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; }
+.nv-formule h3 { margin: 0; font-weight: 800; font-stretch: 118%; font-size: 1.7rem; line-height: 1.05; }
+.nv-formule__prix { margin: 0; display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; }
+.nv-formule__prix b { font-weight: 900; font-stretch: 125%; font-size: clamp(2.6rem, 1.8rem + 2vw, 3.4rem); line-height: 1; letter-spacing: -0.03em; }
+.nv-formule__prix span { font-size: 18px; font-weight: 700; }
+.nv-formule ul { list-style: none; margin: 0; padding: 14px 0 0; border-top: 1.5px solid var(--gris-ligne); display: grid; gap: 10px; font-size: 17px; font-weight: 600; }
+.nv-formule li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+.nv-formule li > span:first-child { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune); }
+.nv-formule__sup { margin: 0; font-size: 16px; color: var(--gris-texte); }
+.nv-formule__sup b { color: var(--violet); }
+.nv-formule > a { margin-top: auto; }
+.nv-formules-communs { margin: 28px 0 0; padding: 20px 24px; border-radius: 20px; background: var(--creme); font-size: 17px; }
+.nv-formules-communs b { display: block; margin-bottom: 4px; }
+
+
+.nv-image-a-venir { position: relative; margin: 0; min-height: clamp(220px, 28vw, 360px); border-radius: 14px; border: 2px dashed var(--gris-trait); background: var(--hachures); display: grid; place-items: center; padding: 20px; box-sizing: border-box; }
+.nv-image-a-venir figcaption { max-width: 34ch; text-align: center; font-size: 15px; font-weight: 700; background: #fff; border-radius: 12px; padding: 10px 14px; }
+
+
+.nv-heure { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: var(--gouttiere); margin-top: 40px; }
+.nv-heure article { display: flex; flex-direction: column; gap: 12px; border: 2px solid var(--gris-ligne); border-radius: var(--rayon); padding: clamp(24px, 3vw, 36px); }
+.nv-heure h3 { margin: 0; font-weight: 800; font-stretch: 118%; font-size: 1.55rem; line-height: 1.05; }
+.nv-heure p { margin: 0; }
+.nv-heure .nv-heure__prix { font-size: 18px; font-weight: 600; }
+.nv-heure .nv-heure__prix b { font-weight: 800; font-stretch: 118%; font-size: var(--montant); line-height: 1.1; }
+.nv-heure .nv-heure__note { font-size: 16px; color: var(--gris-texte); }
+.nv-heure article > a { margin-top: auto; }
+
+
+.nv-prix-mobile { display: none; }
+@media (max-width: 959.98px) { .nv-prix-mobile { display: flex; } }
+
+
+.nv-conseils { margin: 22px 0 0; padding: 18px 20px; border-radius: 16px; background: var(--creme); border: 1.5px solid var(--gris-ligne); }
+.nv-conseils p { margin: 0 0 8px; font-weight: 800; }
+.nv-conseils ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; font-size: 16px; }
+.nv-conseils li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
+.nv-conseils li > span:first-child { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 999px; background: var(--jaune); font-weight: 800; font-size: 14px; }
+.nv-legal { max-width: 760px; }
+.nv-legal h2 { font-weight: 800; font-stretch: 118%; font-size: 1.45rem; line-height: 1.15; margin: 40px 0 12px; }
+.nv-legal p, .nv-legal li { color: var(--gris-texte); text-wrap: pretty; }
+.nv-legal p { margin: 0 0 12px; }
+.nv-legal ul { margin: 0 0 12px; padding-left: 22px; }
+.nv-legal strong, .nv-legal a { color: var(--violet); }
+.nv-legal dl { margin: 0 0 12px; display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; }
+.nv-legal dt { font-weight: 700; }
+.nv-legal dd { margin: 0; color: var(--gris-texte); }
+@media (max-width: 600px) { .nv-legal dl { grid-template-columns: 1fr; gap: 2px; } .nv-legal dd { margin-bottom: 10px; } }
 </style>
 </head>
 <body>
@@ -317,10 +386,10 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       </nav>
       <a href="tel:+32485152702" style="display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 16px; white-space: nowrap;" class="nv-desk">
         <span style="width: 44px; height: 44px; border-radius: 999px; border: 2px solid var(--violet); background: var(--jaune); display: grid; place-items: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span><span class="nv-tel-numero">0485 15 27 02</span></a>
-      <a href="devis.html" class="scp0 nv-desk" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0px 22px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap;">Demander un devis</a>
+      <a href="devis.html" class="scp0 nv-desk" style="display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0px 22px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); font-weight: 700; font-size: 16px; text-decoration: none; white-space: nowrap;">Demander un devis <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
 
   <button type="button" class="nv-menu-bouton" aria-expanded="false" aria-controls="nv-menu" style="font: inherit; font-weight: 700; font-size: 15px; color: var(--violet); background: #fff; border: 1.5px solid var(--gris-trait); border-radius: 999px; min-height: 44px; padding: 0 18px; cursor: pointer;">Menu</button></div>
-  <nav id="nv-menu" class="nv-menu" aria-label="Menu" hidden="" style="display: grid; padding: 8px var(--interieur) 20px; border-top: 1px solid var(--gris-ligne);"><a href="demenagement.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Déménagement</a><a href="location-lift.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Location de lift</a><a href="tarifs.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Tarifs</a><a href="zone.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Zone</a></nav></header><main id="contenu" tabindex="-1">
+  <nav id="nv-menu" class="nv-menu" aria-label="Menu" hidden="" style="display: grid; padding: 8px var(--interieur) 20px; border-top: 1px solid var(--gris-ligne);"><a href="demenagement.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Déménagement</a><a href="location-lift.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Location de lift</a><a href="tarifs.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Tarifs</a><a href="zone.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">Zone</a><a href="international.html" style="text-decoration: none; font-weight: 700; font-size: 20px; padding: 12px 0; border-bottom: 1px solid var(--gris-ligne);">International</a></nav></header><main id="contenu" tabindex="-1">
   
     <nav aria-label="Fil d'Ariane" style="max-width: 1200px; margin: 0px auto; padding: 20px var(--interieur) 0; font-size: 14px; font-weight: 600; color: var(--gris-texte); display: flex; flex-wrap: wrap; gap: 8px;" class="nv-fil">
       
@@ -335,11 +404,11 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
   <span style="width:56px;height:56px;border-radius:999px;border:2px solid var(--violet);background:var(--jaune);display:grid;place-items:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg></span>
   <p data-apercu="" style="margin:0;padding:12px 16px;border:2px dashed var(--violet);border-radius:12px;background:var(--creme);color:var(--violet);font-weight:700;font-size:17px;max-width:46ch">Aperçu du futur site : cette demande n'a pas été envoyée. Pour un devis, appelez le <span style="white-space:nowrap">0485 15 27 02</span>.</p>
   <h1 tabindex="-1" style="font-weight:800;font-stretch:118%;line-height:1.04;margin:0;font-size:var(--h2)">Demande bien reçue</h1>
-  <p style="margin:0;font-size:19px;max-width:46ch">Merci<span data-prenom=""></span>. Nous vous recontactons au <span data-tel-merci=""></span> sous <span style="display:inline-block;padding:.05em .5em;border:1.5px dashed currentColor;border-radius:6px;font-weight:600">[délai à fournir]</span>. Pressé ? Appelez le 0485 15 27 02.</p>
-  <button type="button" data-recommencer="" style="font:inherit;font-weight:700;min-height:56px;padding:0 28px;border-radius:999px;border:2px solid var(--violet);background:var(--jaune);color:var(--violet);cursor:pointer">Faire une autre demande</button>
+  <p style="margin:0;font-size:19px;max-width:46ch">Merci<span data-prenom=""></span>. Nous vous recontactons au <span data-tel-merci=""></span> dans un délai de 24&nbsp;heures. Pressé ? Appelez le 0485 15 27 02.</p>
+  <button type="button" data-recommencer="" class="scp1" style="font:inherit;font-weight:700;min-height:56px;padding:0 28px;border-radius:999px;border:2px solid var(--violet);background:var(--jaune);color:var(--violet);cursor:pointer">Faire une autre demande</button>
 </div><div data-encours="">
 
-          <p style="display: inline-flex; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--jaune); margin: 0px 0px 18px;">Devis gratuit <span style="font-weight: 500; font-style: italic; text-transform: none; letter-spacing: 0px; margin-left: 6px;">(à confirmer)</span></p>
+          <p style="display: inline-flex; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; background: var(--jaune); margin: 0px 0px 18px;">Devis gratuit</p>
           <h1 style="font-weight: 800; font-stretch: 118%; line-height: 1.04; letter-spacing: -0.015em; margin: 0px; font-size: var(--h2);">Demandez votre devis</h1>
           <p style="margin: 14px 0px 0px; font-size: var(--chapeau); color: var(--gris-texte);">Quatre étapes, deux minutes. Plus la demande est précise, plus le devis l'est aussi.</p>
           <div style="margin-top: 32px;">
@@ -352,24 +421,17 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
           <form style="position: relative; margin-top: 28px; border: 2px solid var(--violet); border-radius: 28px; padding: clamp(22px, 3vw, 40px); box-shadow: var(--ombre-formulaire);" data-devis="" novalidate="">
             <span style="position: absolute; top: -2px; left: clamp(24px, 3vw, 40px); width: 72px; height: 8px; background: var(--jaune); border-radius: 0px 0px 8px 8px;"></span>
 
+            <div data-formule-choisie="" hidden="" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 20px;margin:0 0 26px;padding:16px 20px;border-radius:16px;background:var(--creme)"><p style="margin:0;display:grid;gap:4px"><span style="font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase">Votre formule</span><span style="font-weight:800;font-stretch:118%;font-size:1.45rem;line-height:1.15"><span data-formule-nom="">…</span> · <span data-formule-prix="">…</span></span><span style="font-size:15px;font-weight:600" data-formule-detail="">…</span></p><a href="index.html#formules" class="nv-lien" style="display:inline-flex;align-items:center;min-height:44px;font-weight:700;text-decoration:none">Changer de formule</a></div>
             <div data-etape="1"><h2 style="font-weight: 800; font-stretch: 118%; line-height: 1.1; margin: 0px; font-size: 1.6rem;">De quoi avez-vous besoin ?</h2><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 22px;">
-                
-                  <button type="button" aria-pressed="false" style="text-align: left; font: inherit; padding: 20px; border-radius: 16px; border: 2px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer; display: grid; gap: 4px;" data-devis-svc="dem"><b style="font-size: 18px; font-stretch: 110%;">Un déménagement</b><span style="font-size: 14px;">Camion, 70&nbsp;€/h</span></button>
-                
-                  <button type="button" aria-pressed="false" style="text-align: left; font: inherit; padding: 20px; border-radius: 16px; border: 2px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer; display: grid; gap: 4px;" data-devis-svc="lift"><b style="font-size: 18px; font-stretch: 110%;">Le lift seul</b><span style="font-size: 14px;">Monte-meubles, 60&nbsp;€/h</span></button>
-                
-                  <button type="button" aria-pressed="false" style="text-align: left; font: inherit; padding: 20px; border-radius: 16px; border: 2px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer; display: grid; gap: 4px;" data-devis-svc="both"><b style="font-size: 18px; font-stretch: 110%;">Les deux</b><span style="font-size: 14px;">Déménagement + lift</span></button>
-                
-              </div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 22px;">
                 
                   <button type="button" aria-pressed="true" style="font: inherit; font-weight: 600; min-height: 52px; border-radius: 12px; border: 1.5px solid var(--violet); background: var(--violet); color: var(--jaune); cursor: pointer;" data-devis-client="Particulier">Particulier</button>
                 
                   <button type="button" aria-pressed="false" style="font: inherit; font-weight: 600; min-height: 52px; border-radius: 12px; border: 1.5px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer;" data-devis-client="Professionnel">Professionnel</button>
                 
-              </div></div>
+              </div><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 12px; margin-top: 22px;"><button type="button" aria-pressed="false" style="text-align: left; font: inherit; padding: 20px; border-radius: 16px; border: 2px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer; display: grid; gap: 4px;" data-devis-svc="dem"><b style="font-size: 18px; font-stretch: 110%;">Un déménagement</b><span style="font-size: 14px;">Camion, <span data-prix="camion">70&nbsp;€/h</span></span></button><button type="button" aria-pressed="false" style="text-align: left; font: inherit; padding: 20px; border-radius: 16px; border: 2px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer; display: grid; gap: 4px;" data-devis-svc="lift"><b style="font-size: 18px; font-stretch: 110%;">Le lift seul</b><span style="font-size: 14px;">Monte-meubles, <span data-prix="lift">60&nbsp;€/h</span></span></button><button type="button" aria-pressed="false" style="text-align: left; font: inherit; padding: 20px; border-radius: 16px; border: 2px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer; display: grid; gap: 4px;" data-devis-svc="tractable"><b style="font-size: 18px; font-stretch: 110%;">Le lift tractable</b><span style="font-size: 14px;">Accès difficiles, <span data-prix="tractable">120&nbsp;€/h</span></span></button><button type="button" aria-pressed="false" style="text-align: left; font: inherit; padding: 20px; border-radius: 16px; border: 2px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer; display: grid; gap: 4px;" data-devis-svc="both"><b style="font-size: 18px; font-stretch: 110%;">Les deux</b><span style="font-size: 14px;">Déménagement + lift</span></button><button type="button" aria-pressed="false" style="text-align: left; font: inherit; padding: 20px; border-radius: 16px; border: 2px solid var(--gris-trait); background: #fff; color: var(--violet); cursor: pointer; display: grid; gap: 4px;" data-devis-svc="inter"><b style="font-size: 18px; font-stretch: 110%;">À l'étranger</b><span style="font-size: 14px;">Sur devis</span></button></div></div>
 <div data-etape="2" hidden="">
   <h2 style="font-weight:800;font-stretch:118%;line-height:1.1;margin:0;font-size:1.6rem">Les deux adresses</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px 16px;margin-top:22px"><fieldset data-lieu="depart" style="border:2px solid var(--gris-ligne);border-radius:16px;margin:0;padding:18px;display:grid;gap:12px;min-width:0"><legend style="font-weight:800;padding:0 6px">Au départ</legend><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Commune<input list="nv-communes" data-f="commune" placeholder="Ex. Schaerbeek" style="font:inherit;font-size:16px;color:var(--violet);border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%;box-sizing:border-box"></label><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Étage<select data-f="etage" style="font:inherit;font-size:16px;color:var(--violet);background:#fff;border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%"><option value="Rez" selected="">Rez</option><option value="1er">1er</option><option value="2e">2e</option><option value="3e">3e</option><option value="4e">4e</option><option value="5e">5e</option><option value="6e">6e</option><option value="7e">7e</option><option value="8e ou plus">8e ou plus</option></select></label><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Ascenseur<select data-f="asc" style="font:inherit;font-size:16px;color:var(--violet);background:#fff;border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%"><option value="">Choisir</option><option value="Oui">Oui</option><option value="Non">Non</option><option value="Trop petit">Oui, mais trop petit</option></select></label></fieldset><fieldset data-lieu="arrivee" style="border:2px solid var(--gris-ligne);border-radius:16px;margin:0;padding:18px;display:grid;gap:12px;min-width:0"><legend style="font-weight:800;padding:0 6px">À l'arrivée</legend><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Commune<input list="nv-communes" data-f="commune" placeholder="Ex. Uccle" style="font:inherit;font-size:16px;color:var(--violet);border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%;box-sizing:border-box"></label><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Étage<select data-f="etage" style="font:inherit;font-size:16px;color:var(--violet);background:#fff;border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%"><option value="Rez" selected="">Rez</option><option value="1er">1er</option><option value="2e">2e</option><option value="3e">3e</option><option value="4e">4e</option><option value="5e">5e</option><option value="6e">6e</option><option value="7e">7e</option><option value="8e ou plus">8e ou plus</option></select></label><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Ascenseur<select data-f="asc" style="font:inherit;font-size:16px;color:var(--violet);background:#fff;border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%"><option value="">Choisir</option><option value="Oui">Oui</option><option value="Non">Non</option><option value="Trop petit">Oui, mais trop petit</option></select></label></fieldset></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px 16px;margin-top:22px"><fieldset data-lieu="depart" style="border:2px solid var(--gris-ligne);border-radius:16px;margin:0;padding:18px;display:grid;gap:12px;min-width:0"><legend style="font-weight:800;padding:0 6px">Au départ</legend><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Commune<input list="nv-communes" data-f="commune" placeholder="Ex. Schaerbeek" style="font:inherit;font-size:16px;color:var(--violet);border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%;box-sizing:border-box"></label><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Étage<select data-f="etage" style="font:inherit;font-size:16px;color:var(--violet);background:#fff;border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%"><option value="Rez" selected="">Rez</option><option value="1er">1er</option><option value="2e">2e</option><option value="3e">3e</option><option value="4e">4e</option><option value="5e">5e</option><option value="6e">6e</option><option value="7e">7e</option><option value="8e">8e</option><option value="9e à 24e">9e à 24e</option></select></label><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Ascenseur<select data-f="asc" style="font:inherit;font-size:16px;color:var(--violet);background:#fff;border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%"><option value="">Choisir</option><option value="Oui">Oui</option><option value="Non">Non</option><option value="Trop petit">Oui, mais trop petit</option></select></label></fieldset><fieldset data-lieu="arrivee" style="border:2px solid var(--gris-ligne);border-radius:16px;margin:0;padding:18px;display:grid;gap:12px;min-width:0"><legend style="font-weight:800;padding:0 6px">À l'arrivée</legend><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Commune<input list="nv-communes" data-f="commune" placeholder="Ex. Uccle" style="font:inherit;font-size:16px;color:var(--violet);border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%;box-sizing:border-box"></label><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Étage<select data-f="etage" style="font:inherit;font-size:16px;color:var(--violet);background:#fff;border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%"><option value="Rez" selected="">Rez</option><option value="1er">1er</option><option value="2e">2e</option><option value="3e">3e</option><option value="4e">4e</option><option value="5e">5e</option><option value="6e">6e</option><option value="7e">7e</option><option value="8e">8e</option><option value="9e à 24e">9e à 24e</option></select></label><label style="display:grid;gap:8px;font-size:15px;font-weight:700">Ascenseur<select data-f="asc" style="font:inherit;font-size:16px;color:var(--violet);background:#fff;border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%"><option value="">Choisir</option><option value="Oui">Oui</option><option value="Non">Non</option><option value="Trop petit">Oui, mais trop petit</option></select></label></fieldset></div>
   <datalist id="nv-communes"><option value="Anderlecht"></option><option value="Auderghem"></option><option value="Berchem-Sainte-Agathe"></option><option value="Bruxelles-Ville"></option><option value="Etterbeek"></option><option value="Evere"></option><option value="Forest"></option><option value="Ganshoren"></option><option value="Ixelles"></option><option value="Jette"></option><option value="Koekelberg"></option><option value="Molenbeek-Saint-Jean"></option><option value="Saint-Gilles"></option><option value="Saint-Josse-ten-Noode"></option><option value="Schaerbeek"></option><option value="Uccle"></option><option value="Watermael-Boitsfort"></option><option value="Woluwe-Saint-Lambert"></option><option value="Woluwe-Saint-Pierre"></option></datalist>
   <p data-conseil="" hidden="" style="margin:18px 0 0;display:flex;gap:10px;align-items:flex-start;background:var(--creme);border-radius:14px;padding:14px 16px;font-size:15px;font-weight:600"><span style="display:grid;place-items:center;flex:none;width:26px;height:26px;border-radius:999px;background:var(--jaune)">i</span>Au-dessus du 2e étage sans ascenseur adapté, le lift fait souvent gagner du temps. Nous l'avons ajouté à votre demande, vous pourrez le retirer.</p>
 </div>
@@ -389,8 +451,9 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
     <label style="grid-column:1/-1;display:grid;gap:8px;font-size:15px;font-weight:700">Adresse mail<input type="email" data-f="mail" autocomplete="email" placeholder="vous@exemple.be" style="font:inherit;font-size:16px;color:var(--violet);border:1.5px solid var(--gris-trait);border-radius:12px;min-height:52px;padding:12px 14px;width:100%;box-sizing:border-box"></label>
   </div>
   <p id="nv-erreur-tel" data-erreur="" hidden="" role="alert" style="margin:14px 0 0;display:flex;gap:8px;align-items:flex-start;font-weight:700;font-size:15px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4M12 16h.01"></path></svg><span>Il nous faut un numéro de téléphone pour vous rappeler.</span></p>
-  <p style="margin:16px 0 0;font-size:14px;color:var(--gris-texte)">Vos coordonnées servent uniquement à répondre à votre demande.</p>
-</div><div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: space-between; margin-top: 28px;"><button type="button" data-retour="" hidden="" style="font:inherit;font-weight:700;min-height:56px;padding:0 24px;border-radius:999px;border:2px solid var(--gris-trait);background:#fff;color:var(--violet);cursor:pointer">Retour</button>
+  <div class="nv-conseils"><p>Avant le jour J</p><ul><li><span aria-hidden="true">1</span><span><b>Réservez l'emplacement.</b> La place de stationnement du camion et du lift se demande à votre commune.</span></li><li><span aria-hidden="true">2</span><span><b>Signalez les obstacles.</b> Un arbre, un poteau, des câbles ou une rue étroite devant l'adresse&nbsp;: dites-le-nous avant le jour J.</span></li></ul></div>
+  <p style="margin:16px 0 0;font-size:14px;color:var(--gris-texte)">Vos coordonnées servent uniquement à répondre à votre demande (<a href="confidentialite.html" style="color: var(--violet); font-weight: 700;">confidentialité</a>).</p>
+</div><p class="nv-prix-mobile" style="margin: 24px 0px 0px; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; font-weight: 700;">Ordre de prix : <span data-est-total="" style="font-weight: 900; font-stretch: 125%; font-size: 1.6rem;">390 €</span><span style="font-size: 14px; font-weight: 500; color: var(--gris-texte);" data-prix-note="">indicatif, le devis fait foi</span></p><div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: space-between; margin-top: 28px;"><button type="button" data-retour="" hidden="" class="scp1" style="font:inherit;font-weight:700;min-height:56px;padding:0 24px;border-radius:999px;border:2px solid var(--violet);background:var(--jaune);color:var(--violet);cursor:pointer;display:inline-flex;align-items:center;gap:10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 19l-7-7 7-7"></path></svg> Retour</button>
               
               <button type="button" class="scp0" style="margin-left: auto; display: inline-flex; align-items: center; gap: 10px; font: inherit; font-weight: 700; font-size: 18px; min-height: 60px; padding: 0px 32px; border-radius: 999px; border: 2px solid var(--violet); background: var(--violet); color: var(--jaune); cursor: pointer;" data-cta-bouton=""><span data-cta="">Continuer</span> <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></button>
             </div>
@@ -404,10 +467,10 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
             <div style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--gris-ligne); padding-bottom: 8px;"><dt style="color: var(--gris-texte);">Service</dt><dd style="margin: 0px; font-weight: 700; text-align: right;" data-recap="Service">…</dd></div><div style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--gris-ligne); padding-bottom: 8px;"><dt style="color: var(--gris-texte);">Client</dt><dd style="margin: 0px; font-weight: 700; text-align: right;" data-recap="Client">Particulier</dd></div><div style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--gris-ligne); padding-bottom: 8px;"><dt style="color: var(--gris-texte);">Trajet</dt><dd style="margin: 0px; font-weight: 700; text-align: right;" data-recap="Trajet">… → …</dd></div><div style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--gris-ligne); padding-bottom: 8px;"><dt style="color: var(--gris-texte);">Date</dt><dd style="margin: 0px; font-weight: 700; text-align: right;" data-recap="Date">…</dd></div><div style="display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--gris-ligne); padding-bottom: 8px;"><dt style="color: var(--gris-texte);">Volume</dt><dd style="margin: 0px; font-weight: 700; text-align: right;" data-recap="Volume">Je ne sais pas</dd></div>
           </dl>
           <p style="margin: 16px 0px 0px; font-size: 14px; font-weight: 700;">Ordre de prix</p>
-          <p style="margin: 2px 0px 0px; font-weight: 900; font-stretch: 125%; font-size: 2.2rem; line-height: 1.1;" data-est-total="" aria-live="polite" aria-atomic="true">420 €</p>
-          <p style="margin: 4px 0px 0px; font-size: 14px; color: var(--gris-texte);" data-est-calcul="devis">3 h × 70&nbsp;€ (déménagement) + 3 h × 70 € (lift, +10 € étages). Indicatif, le devis fait foi.</p>
+          <p style="margin: 2px 0px 0px; font-weight: 900; font-stretch: 125%; font-size: 2.2rem; line-height: 1.1;" data-est-total="" aria-live="polite" aria-atomic="true">390 €</p>
+          <p style="margin: 4px 0px 0px; font-size: 14px; color: var(--gris-texte);" data-est-calcul="devis">3 h × 70&nbsp;€ (déménagement) + 3 h × 60 € (lift). Indicatif, le devis fait foi.</p>
         </div>
-        <a href="tel:+32485152702" class="scp1" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; border-radius: 999px; border: 2px solid var(--violet); background: var(--jaune); color: var(--violet); font-weight: 700; text-decoration: none;">Plutôt par téléphone : 0485 15 27 02</a>
+        <a href="tel:+32485152702" class="scp1" style="display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; border-radius: 999px; border: 2px solid var(--violet); background: var(--jaune); color: var(--violet); font-weight: 700; text-decoration: none;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> Plutôt par téléphone : 0485 15 27 02</a>
       </aside>
     </div></section>
 
@@ -420,7 +483,7 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
     <div>
       <h2 style="display: inline-block; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0px 0px 16px; padding-bottom: 6px; border-bottom: 3px solid var(--jaune);">Services</h2>
       <ul style="list-style: none; margin: 0px; padding: 0px; display: grid; gap: 10px; font-size: 16px;">
-        <li><a href="demenagement.html" class="nv-pied-lien">Déménagement</a></li><li><a href="location-lift.html" class="nv-pied-lien">Location de lift</a></li><li><a href="tarifs.html" class="nv-pied-lien">Tarifs</a></li><li><a href="devis.html" class="nv-pied-lien">Demander un devis</a></li>
+        <li><a href="demenagement.html" class="nv-pied-lien">Déménagement</a></li><li><a href="location-lift.html" class="nv-pied-lien">Location de lift</a></li><li><a href="international.html" class="nv-pied-lien">Déménagement international</a></li><li><a href="tarifs.html" class="nv-pied-lien">Tarifs</a></li><li><a href="devis.html" class="nv-pied-lien">Demander un devis</a></li>
       </ul>
     </div>
     <div>
@@ -434,15 +497,15 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       <h2 style="display: inline-block; font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin: 0px 0px 16px; padding-bottom: 6px; border-bottom: 3px solid var(--jaune);">Contact</h2>
       <ul style="list-style: none; margin: 0px; padding: 0px; display: grid; gap: 10px; font-size: 16px;">
         <li><a href="tel:+32485152702" style="font-weight: 700;" class="nv-pied-lien">0485 15 27 02</a></li>
-        <li>Mail <span style="display: inline-block; padding: 0.05em 0.5em; border: 1.5px dashed; border-radius: 6px; font-weight: 600;">[à fournir]</span></li>
-        <li>Horaires <span style="display: inline-block; padding: 0.05em 0.5em; border: 1.5px dashed; border-radius: 6px; font-weight: 600;">[à fournir]</span></li>
+        <li><a href="mailto:contact@demenago.be" class="nv-pied-lien">contact@demenago.be</a></li>
+        <li>Horaires : de 6 h à 22 h</li>
         <li style="color: var(--gris-texte); font-size: 14px;">TVA BE 0798.222.995</li>
       </ul>
     </div>
   </div>
   <div style="max-width: 1200px; margin: 48px auto 0px; padding-top: 24px; border-top: 1px solid var(--gris-ligne); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; font-size: 14px; color: var(--gris-texte);">
     <span>© 2026 DéménaGo</span>
-    <nav aria-label="Informations" style="display: flex; gap: 20px; flex-wrap: wrap;"><a href="plan-du-site.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Plan du site</a><a href="index.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Mentions légales</a><a href="index.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Confidentialité</a></nav>
+    <nav aria-label="Informations" style="display: flex; gap: 20px; flex-wrap: wrap;"><a href="plan-du-site.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Plan du site</a><a href="mentions-legales.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Mentions légales</a><a href="confidentialite.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Confidentialité</a><a href="conditions-generales.html" style="text-underline-offset: 3px;" class="nv-pied-bas-lien">Conditions générales</a></nav>
   </div></footer></div>
 <script>
 
@@ -454,7 +517,7 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
 
   
   const CLE = 'nv-demenageur-v1';
-  let mem = { est: { service: 'both', heures: 3, etage: 5, weekend: false }, service: '' };
+  let mem = { est: { service: 'both', heures: 3, etage: 4 }, service: '' };   
   try { const m = JSON.parse(sessionStorage.getItem(CLE) || 'null'); if (m && m.est) mem = m; } catch (e) {  }
   const sauver = () => { try { sessionStorage.setItem(CLE, JSON.stringify(mem)); } catch (e) {  } };
 
@@ -462,17 +525,25 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
   try {
     const q = new URLSearchParams(location.search), est = q.get('est');
     if (est) {
-      const [sv, h, e, w] = est.split(',');
-      if (['dem', 'lift', 'both'].includes(sv)) {
-        mem.est = { service: sv, heures: Math.min(12, Math.max(1, parseInt(h, 10) || 3)), etage: Math.min(8, Math.max(1, parseInt(e, 10) || 5)), weekend: w === '1' };
+      const [sv, h, e] = est.split(',');
+      if (['dem', 'lift', 'tractable', 'both', 'inter'].includes(sv)) {
+        mem.est = { service: sv, heures: Math.min(12, Math.max(1, parseInt(h, 10) || 3)), etage: (parseInt(e, 10) || 4) > 4 ? 24 : 4 };
         if (q.has('choix')) mem.service = sv;
         sauver();
       }
     }
   } catch (e) {  }
+  
+  const FORMULES = {
+    confort: { nom: 'Confort', prix: 380, heures: 3, sup: 150, equipe: '2 déménageurs' },
+    premium: { nom: 'Premium', prix: 520, heures: 3, sup: 170, equipe: '4 déménageurs' },
+    'no-stress': { nom: 'No Stress', prix: 850, heures: 5, sup: 170, equipe: '4 déménageurs' },
+  };
+  let formule = null;
+  try { formule = FORMULES[new URLSearchParams(location.search).get('formule')] || null; } catch (e) {  }
   function lierDevis() {
-    const e = mem.est, param = 'est=' + [e.service, e.heures, e.etage, e.weekend ? 1 : 0].join(',');
-    $$('a[href^="devis.html"]').forEach(a => a.setAttribute('href', 'devis.html?' + param + (a.hasAttribute('data-est-vers-devis') ? '&choix=1' : '')));
+    const e = mem.est, param = 'est=' + [e.service, e.heures, e.etage].join(',');
+    $$('a[href^="devis.html"]:not([data-formule]):not([data-devis-fixe])').forEach(a => a.setAttribute('href', 'devis.html?' + param + (a.hasAttribute('data-est-vers-devis') ? '&choix=1' : '')));
   }
 
   
@@ -485,35 +556,36 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
 
   
   const eur = n => n.toLocaleString('fr-BE') + ' €';
-  function estimer(e) {
-    const h = e.heures, lignes = [];
-    let total = 0;
-    if (e.service !== 'lift') { const hd = Math.max(2, h); total += hd * 70; lignes.push(hd + ' h × 70 € (déménagement)'); }
-    if (e.service !== 'dem') {
-      const extra = Math.max(0, e.etage - 4) * 10, we = e.weekend ? 10 : 0, taux = 60 + extra + we;
-      total += taux * h;
-      lignes.push(h + ' h × ' + taux + ' € (lift' + (extra ? ', +' + extra + ' € étages' : '') + (we ? ', +10 € week-end' : '') + ')');
+  const TAUX = { Particulier: { camion: 70, lift: 60, tractable: 120 }, Professionnel: { camion: 80, lift: 70, tractable: 150 } };
+  function estimer(e, client) {
+    const t = TAUX[client] || TAUX.Particulier, h = e.heures, lignes = [];
+    let total = 0, surDevis = false;
+    if (e.service === 'inter') return { total: 'Sur devis', calcul: 'Pour l\'étranger, le prix se fait sur devis.' };   
+    if (e.service === 'dem' || e.service === 'both') { const hd = Math.max(2, h); total += hd * t.camion; lignes.push(hd + ' h × ' + t.camion + '\u00a0€ (déménagement)'); }
+    if (e.service === 'lift' || e.service === 'both' || e.service === 'tractable') {
+      const nom = e.service === 'tractable' ? 'lift tractable' : 'lift', taux = e.service === 'tractable' ? t.tractable : t.lift;
+      if (e.etage > 4) { surDevis = true; lignes.push(nom + ' au-delà du 4e étage : sur devis'); }
+      else { total += taux * h; lignes.push(h + ' h × ' + taux + '\u00a0€ (' + nom + ')'); }
     }
-    return { total: eur(total), calcul: lignes.join(' + ') };
+    return { total: surDevis && !total ? 'Sur devis' : eur(total), calcul: lignes.join(' + ') };
   }
   function rendreEst() {
-    const e = mem.est, r = estimer(e);
+    const e = mem.est, fo = form && d.formule;
+    const r = fo ? { total: eur(fo.prix), calcul: 'Formule ' + fo.nom + ' : ' + fo.heures + '\u00a0h comprises, ' + fo.equipe + '. Heure supplémentaire : ' + eur(fo.sup) + '.' } : estimer(e, form ? d.client : 'Particulier');
     $$('[data-est-svc]').forEach(b => peindre(b, b.dataset.estSvc === e.service));
     $$('[data-est-etage]').forEach(b => peindre(b, Number(b.dataset.estEtage) === e.etage));
-    $$('[data-est-jour]').forEach(b => peindre(b, (b.dataset.estJour === '1') === e.weekend));
     const f = $('[data-est-etages]'); if (f) f.hidden = e.service === 'dem';
     $$('[data-est-heures]').forEach(x => { x.textContent = e.heures + ' h'; });
     $$('[data-est-total]').forEach(x => { x.textContent = r.total; });
-    $$('[data-est-calcul]').forEach(x => { x.textContent = x.dataset.estCalcul === 'devis' ? r.calcul + '. Indicatif, le devis fait foi.' : r.calcul; });
+    $$('[data-est-calcul]').forEach(x => { x.textContent = x.dataset.estCalcul === 'devis' && !fo && e.service !== 'inter' ? r.calcul + '. Indicatif, le devis fait foi.' : r.calcul; });
   }
   function majEst(p) { mem.est = Object.assign({}, mem.est, p); sauver(); lierDevis(); rendreEst(); }
 
   document.addEventListener('click', ev => {
-    const b = ev.target.closest('[data-est-svc],[data-est-etage],[data-est-jour],[data-est-moins],[data-est-plus],[data-est-vers-devis]');
+    const b = ev.target.closest('[data-est-svc],[data-est-etage],[data-est-moins],[data-est-plus],[data-est-vers-devis]');
     if (!b) return;
     if (b.hasAttribute('data-est-svc')) majEst({ service: b.dataset.estSvc });
     else if (b.hasAttribute('data-est-etage')) majEst({ etage: Number(b.dataset.estEtage) });
-    else if (b.hasAttribute('data-est-jour')) majEst({ weekend: b.dataset.estJour === '1' });
     else if (b.hasAttribute('data-est-moins')) majEst({ heures: Math.max(1, mem.est.heures - 1) });
     else if (b.hasAttribute('data-est-plus')) majEst({ heures: Math.min(12, mem.est.heures + 1) });
     else if (b.hasAttribute('data-est-vers-devis')) { mem.service = mem.est.service; sauver(); } 
@@ -521,11 +593,11 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
 
   
   const form = $('[data-devis]');
-  const ETAGES = ['Rez', '1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e ou plus'];
+  const ETAGES = ['Rez', '1er', '2e', '3e', '4e', '5e', '6e', '7e', '8e', '9e à 24e'];   
   const NOMS = ['Service', 'Adresses', 'Date et volume', 'Coordonnées'];
-  const SERVICES = { dem: 'Déménagement', lift: 'Location de lift', both: 'Les deux' };
+  const SERVICES = { dem: 'Déménagement', lift: 'Location de lift', tractable: 'Lift tractable', both: 'Les deux', inter: 'Déménagement international' };
   const d = {
-    etape: 1, envoye: false, erreur: false, service: mem.service || '', client: 'Particulier',
+    etape: formule ? 2 : 1, envoye: false, erreur: false, service: formule ? 'dem' : (mem.service || ''), client: 'Particulier', formule: formule,
     depart: { commune: '', etage: 'Rez', asc: '' }, arrivee: { commune: '', etage: 'Rez', asc: '' },
     date: '', volume: 'Je ne sais pas', message: '', prenom: '', tel: '', mail: '',
   };
@@ -537,10 +609,23 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
     const svc = d.service || (hautSansAsc() ? 'both' : '');
     $$('[data-devis-svc]').forEach(b => peindre(b, d.service === b.dataset.devisSvc));
     $$('[data-devis-client]').forEach(b => peindre(b, d.client === b.dataset.devisClient));
+    $$('[data-prix]').forEach(x => { x.textContent = (TAUX[d.client] || TAUX.Particulier)[x.dataset.prix] + '\u00a0€/h'; });   
     $$('[data-etape]').forEach(p => { p.hidden = Number(p.dataset.etape) !== d.etape; });
     $('[data-envoye]').hidden = !d.envoye;
     $('[data-encours]').hidden = d.envoye;
-    $('[data-etape-texte]').textContent = 'Étape ' + d.etape + ' sur 4 · ' + NOMS[d.etape - 1];
+    const noms = d.formule ? ['Formule'].concat(NOMS.slice(1)) : NOMS;   
+    $('[data-etape-texte]').textContent = 'Étape ' + d.etape + ' sur 4 · ' + noms[d.etape - 1];
+    const pas1 = $('[data-pas] .nv-pas-nom'); if (pas1) pas1.textContent = noms[0];
+    const fc = $('[data-formule-choisie]');
+    if (fc) {
+      fc.hidden = !d.formule;
+      if (d.formule) {
+        $('[data-formule-nom]', fc).textContent = d.formule.nom;
+        $('[data-formule-prix]', fc).textContent = eur(d.formule.prix);
+        $('[data-formule-detail]', fc).textContent = d.formule.heures + '\u00a0h comprises, ' + d.formule.equipe + ', lift et camion de 20\u00a0m³';
+      }
+    }
+    const note = $('[data-prix-note]'); if (note) note.textContent = d.formule ? d.formule.heures + '\u00a0h comprises' : d.service === 'inter' ? '' : 'indicatif, le devis fait foi';
     $('[data-pct]').textContent = (d.etape * 25) + ' %';
     $('[data-barre]').style.clipPath = 'inset(0 ' + (100 - d.etape * 25) + '% 0 0 round 999px)';   
     $$('[data-pas]').forEach((li, i) => {
@@ -548,9 +633,9 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       li.style.color = on ? 'var(--violet)' : 'var(--gris-texte)';
       li.firstElementChild.style.background = on ? 'var(--jaune)' : '#fff';
     });
-    $('[data-retour]').hidden = d.etape === 1;
+    $('[data-retour]').hidden = d.etape === (d.formule ? 2 : 1);   
     $('[data-cta]').textContent = d.etape === 4 ? 'Envoyer ma demande' : 'Continuer';
-    $('[data-conseil]').hidden = !(hautSansAsc() && d.service === 'dem');
+    $('[data-conseil]').hidden = !(hautSansAsc() && d.service === 'dem' && !d.formule);   
     $('[data-erreur]').hidden = !d.erreur;
     const tel = $('[data-tel]');
     tel.style.borderColor = d.erreur ? 'var(--violet)' : 'var(--gris-trait)';
@@ -558,13 +643,14 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
     if (d.erreur) { tel.setAttribute('aria-invalid', 'true'); tel.setAttribute('aria-describedby', 'nv-erreur-tel'); }
     else { tel.removeAttribute('aria-invalid'); tel.removeAttribute('aria-describedby'); }
     const recap = {
-      Service: SERVICES[svc] || '…',
+      Service: d.formule ? 'Formule ' + d.formule.nom : (SERVICES[svc] || '…'),
       Client: d.client,
       Trajet: (d.depart.commune || '…') + ' → ' + (d.arrivee.commune || '…'),
       Date: d.date ? new Date(d.date).toLocaleDateString('fr-BE') : '…',
       Volume: d.volume,
     };
     $$('[data-recap]').forEach(x => { x.textContent = recap[x.dataset.recap]; });
+    const lc = $('[data-recap="Client"]'); if (lc) lc.parentElement.hidden = !!d.formule;   
     $$('[data-prenom]').forEach(x => { x.textContent = d.prenom ? ' ' + d.prenom : ''; });
     $$('[data-tel-merci]').forEach(x => { x.textContent = d.tel; });
     rendreEst();
@@ -581,7 +667,7 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
     const invalide = $$(':invalid', panneau)[0];
     if (invalide) { invalide.reportValidity(); return; }
     if (d.etape === 1 && !d.service) choisirService('dem');
-    if (d.etape === 2 && hautSansAsc() && d.service === 'dem') choisirService('both');
+    if (d.etape === 2 && hautSansAsc() && d.service === 'dem' && !d.formule) choisirService('both');
     if (d.etape === 4) {
       if (!d.tel.trim()) { d.erreur = true; rendreDevis(); $('[data-tel]').focus(); return; }   
       racine.classList.add('nv-anime'); d.envoye = true; rendreDevis();
@@ -602,7 +688,11 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       const c = ev.target.closest('[data-f]');
       if (!c) return;
       const lieu = c.closest('[data-lieu]');
-      if (lieu) d[lieu.dataset.lieu][c.dataset.f] = c.value;
+      if (lieu) {
+        d[lieu.dataset.lieu][c.dataset.f] = c.value;
+        
+        if (c.dataset.f === 'etage') { mem.est = Object.assign({}, mem.est, { etage: [d.depart, d.arrivee].some(l => ETAGES.indexOf(l.etage) >= 5) ? 24 : 4 }); sauver(); lierDevis(); }
+      }
       else { d[c.dataset.f] = c.value; d.erreur = false; }
       rendreDevis();
     };
@@ -614,8 +704,8 @@ html.nv-anime [data-etape]:not([hidden]), html.nv-anime [data-envoye]:not([hidde
       if (b.hasAttribute('data-cta-bouton')) { avancer(); return; }
       if (b.hasAttribute('data-devis-svc')) choisirService(b.dataset.devisSvc);
       else if (b.hasAttribute('data-devis-client')) d.client = b.dataset.devisClient;
-      else if (b.hasAttribute('data-retour')) { racine.classList.add('nv-anime'); d.etape = Math.max(1, d.etape - 1); }
-      else if (b.hasAttribute('data-recommencer')) { racine.classList.add('nv-anime'); d.etape = 1; d.envoye = false; }
+      else if (b.hasAttribute('data-retour')) { racine.classList.add('nv-anime'); d.etape = Math.max(d.formule ? 2 : 1, d.etape - 1); }
+      else if (b.hasAttribute('data-recommencer')) { racine.classList.add('nv-anime'); d.etape = 1; d.envoye = false; d.formule = null; d.service = mem.service || ''; }
       rendreDevis();
       if (b.hasAttribute('data-retour') || b.hasAttribute('data-recommencer')) focusTitre();
     });
